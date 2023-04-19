@@ -7,8 +7,7 @@
     box-sizing: border-box;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
-#particles-js
-{
+#particles-js {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -28,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #efefef;
+    /* background: #efefef; */
 }
 
 
@@ -53,3 +52,121 @@ body {
     width: 100%;
     height: auto;
   }
+
+/************ Skills Css ************/
+.skill {
+  padding: 0 0 50px 0;
+  position: relative;
+}
+.carousel{
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: -60px;
+}
+.skill h2 {
+	font-size: 45px;
+	font-weight: 700;
+}
+.skill p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
+}
+.skill-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.skill-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
+}
+.background-image-left {
+  top: 0%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -4;
+}
+
+/* css navbar */
+html,
+body {
+  height: 100%;
+  color: #666666;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+a {
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.125s linear;
+}
+a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.125s linear;
+}
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.first-container {
+  background: url() no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.nav-container {
+  height: 58px;
+  width: 100%;
+  position: fixed;
+  color: white;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s linear;
+}
+.nav-container.solid-nav {
+  background-color: #aaa;
+  transition: background-color 0.2s linear;
+}
+.nav-container .nav-row {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 18px;
+}
+.nav-container .nav-row .nav-logo {
+  display: inline-block;
+  font-weight: 900;
+}
+.nav-container .nav-row .nav-controls {
+  float: right;
+}
+.nav-container .nav-row .nav-controls a {
+  padding-left: 20px;
+}
+.container {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav-logo img {
+  width: 50%;
+}
