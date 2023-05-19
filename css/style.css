@@ -8338,16 +8338,34 @@ h1, h2, h3, h4, h5,
   -ms-touch-action: pan-y;
   touch-action: pan-y; }
 
-  .card1 {
+
+  .c-wrap {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .c-wrap .kartu-item {
+    padding: 5px 15px;
+    width: 28%;
+  }
+
+  .c-wrap .card1 {
     display: block;
     top: 0px;
     position: relative;
-    max-width: 262px;
+    /* max-width: 25%; */
+    width: 100%;
+    min-width: 225px;
+    min-height: 150px;
     background-color: #f2f8f9;
     border-radius: 4px;
-    height: 250px;
-    margin-left: 80px;
-    padding: 32px 24px;
+    height: 80%;
+    /* margin-left: 80px; */
+    margin-bottom: 20px;
+    padding: 15px 10px;
     /* margin: 12px; */
     text-decoration: none;
     z-index: 0;
@@ -8382,229 +8400,34 @@ h1, h2, h3, h4, h5,
     }
   }
 
-  .card2 {
-    display: block;
-    top: 0px;
-    position: relative;
-    max-width: 262px;
-    background-color: #f2f8f9;
-    border-radius: 4px;
-    padding: 32px 24px;
-    height: 250px;
-    margin-left: 80px;
-    text-decoration: none;
-    z-index: 0;
+  .c-wrap p {
+    color: black;
+    /* text-transform: uppercase; */
+    white-space: nowrap;
     overflow: hidden;
-    border: 1px solid #f2f8f9;
-  
-    &:hover {
-      transition: all 0.2s ease-out;
-      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-      top: -4px;
-      border: 1px solid #cccccc;
-      background-color: white;
-    }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -16px;
-      right: -16px;
-      /* background: #00838d; */
-      height: 32px;
-      width: 32px;
-      border-radius: 32px;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      transition: transform 0.15s ease-out;
-    }
-  
-    &:hover:before {
-      transform: scale(2.15);
-    }
+    margin-top: -15px;
   }
 
-  .card3 {
-    display: block;
-    top: 0px;
-    position: relative;
-    max-width: 262px;
-    background-color: #f2f8f9;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin-left: 400px;
-    margin-top: -527px;
-    height: 250px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    border: 1px solid #f2f8f9;
-  
-    &:hover {
-      transition: all 0.2s ease-out;
-      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-      top: -4px;
-      border: 1px solid #cccccc;
-      background-color: white;
-    }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -16px;
-      right: -16px;
-      /* background: #00838d; */
-      height: 32px;
-      width: 32px;
-      border-radius: 32px;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      transition: transform 0.15s ease-out;
-    }
-  
-    &:hover:before {
-      transform: scale(2.15);
-    }
-  }
 
-  .card4 {
-    display: block;
-    top: 0px;
-    position: relative;
-    max-width: 262px;
-    background-color: #f2f8f9;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin-left: 400px;
-    margin-top: 0px;
-    height: 250px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    border: 1px solid #f2f8f9;
-  
-    &:hover {
-      transition: all 0.2s ease-out;
-      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-      top: -4px;
-      border: 1px solid #cccccc;
-      background-color: white;
-    }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -16px;
-      right: -16px;
-      /* background: #00838d; */
-      height: 32px;
-      width: 32px;
-      border-radius: 32px;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      transition: transform 0.15s ease-out;
-    }
-  
-    &:hover:before {
-      transform: scale(2.15);
-    }
-  }
 
-  .card5 {
-    display: block;
-    top: 0px;
-    position: relative;
-    max-width: 262px;
-    background-color: #f2f8f9;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin-left: 715px;
-    margin-top: -527px;
-    height: 250px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    border: 1px solid #f2f8f9;
-  
-    &:hover {
-      transition: all 0.2s ease-out;
-      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-      top: -4px;
-      border: 1px solid #cccccc;
-      background-color: white;
-    }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -16px;
-      right: -16px;
-      /* background: #00838d; */
-      height: 32px;
-      width: 32px;
-      border-radius: 32px;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      transition: transform 0.15s ease-out;
-    }
-  
-    &:hover:before {
-      transform: scale(2.15);
-    }
+  .p-wrap {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-
-  .card6 {
-    display: block;
-    top: 0px;
-    position: relative;
-    max-width: 262px;
-    background-color: #f2f8f9;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin-left: 715px;
-    margin-top: 0px;
-    height: 250px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    border: 1px solid #f2f8f9;
   
-    &:hover {
-      transition: all 0.2s ease-out;
-      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-      top: -4px;
-      border: 1px solid #cccccc;
-      background-color: white;
-    }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -16px;
-      right: -16px;
-      /* background: #00838d; */
-      height: 32px;
-      width: 32px;
-      border-radius: 32px;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      transition: transform 0.15s ease-out;
-    }
-  
-    &:hover:before {
-      transform: scale(2.15);
-    }
+  .p-wrap .kartu-proj {
+    padding: 5px 15px;
+    width: 28%;
   }
 
   .projek1 {
     display: block;
     top: 0px;
     position: relative;
+    width: 100%;
     /* max-width: 262px; */
     background-color: #f2f8f9;
     border-radius: 4px;
@@ -8660,7 +8483,7 @@ h1, h2, h3, h4, h5,
     background-color: #f2f8f9;
     border-radius: 4px;
     padding: 32px 24px;
-    margin-left: 715px;
+    /* margin-left: 15px; */
     height: 250px;
     text-decoration: none;
     z-index: 0;
@@ -8694,3 +8517,4 @@ h1, h2, h3, h4, h5,
       transform: scale(2.15);
     }
   }
+
