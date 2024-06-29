@@ -107,13 +107,14 @@
   flex: 1 1 0%;
   flex-direction: column;
   justify-content: center;
-  padding: 2.5rem 0 0.75rem 0.75rem;
+  padding: 2.5rem 0.8rem 0.75rem 0.75rem;
 }
 
 .profile {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.5rem;
+  /* margin: -0.5rem; */
+  padding: 1rem;
   position: relative;
   z-index: 10;
 }
