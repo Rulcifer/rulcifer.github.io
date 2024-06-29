@@ -21,7 +21,7 @@ This Personal Portfolio is a dynamic and interactive portfolio website built wit
 
 ### App Screenshot
 
-![screenshot](https://github.com/PrantoshB/React-Portfolio/blob/main/Screenshot%20from%202023-07-01%2022-15-34.png)
+![screenshot](https://github.com/Rulcifer/rulcifer.github.io/blob/main/Screenshot%20from%202024-06-29.png?raw=true)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
