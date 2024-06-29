@@ -89,7 +89,7 @@ footer h3 {
 }
 
 .background__lights {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
