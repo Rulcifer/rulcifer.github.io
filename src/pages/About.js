@@ -33,6 +33,11 @@ const About = () => (
       <p className="paragraph about-para">
       My journey in the programming world began in 2019, when I was still in college I tried to be a freelancer. Since then, I have had the opportunity to work on various projects, hone my skills, and expand my knowledge. I have experience in creating information system projects such as creating website-based applications, creating user interface designs, and analyzing business processes.
       </p>
+      <button className="hire-me">
+        <a href="https://drive.google.com/file/d/1dnjHaiUL986_ipYBeJqXycvkwsXsXL5l/view?usp=drive_link" target="_blank" rel="noreferrer">
+          GET MY CV
+        </a>
+      </button>
     </div>
     <div className="about-skills">
       <h2 className="skill-title">Front-End</h2>
