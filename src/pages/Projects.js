@@ -1,0 +1,68 @@
+import React from 'react'
+import './Projects.css'
+import ProjectCard from '../components/ProjectCard'
+
+const Projects = () => {
+  const projectData = [
+    {
+      image_url: 'https://drive.google.com/thumbnail?id=1uuFf3p2z4Og7dxj6R_pAuTu-BeRSItZG&sz=w1000-h1000',
+      project_name: 'Company Profile Pohon Perindang',
+      description:
+        'By marketing UD Pohon Perindang through a website that can make it easier for consumers or targets to find out what products are sold and the expertise of this UD to provide what consumers need. Build and develop the UD company profile website. Shade Trees for increase the companys online visibility and presence. Introduce the products offered through the company website with a strategy effective marketing to reach more consumers. Develop an efficient and effective product ordering system or process for facilitate transactions between customers and companies. As well as designing a logo based on the main products sold to strengthen the company brand identity.',
+      tech_stack: ['Wordpress', 'Canva', 'Adobe XD'],
+      source_link:
+        'https://www.pohonperindang.com',
+    },
+    {
+      image_url: 'https://drive.google.com/thumbnail?id=1ieDtg_mQfLPCPpEenG99-L-qr7oOZmNQ&sz=w1000-h1000',
+      project_name: 'Front-End 1010-Group',
+      description:
+        'By developing the website appearance for user satisfaction in introducing existing products in the company. Redeveloped the front-end of the existing 1010-Group website to improve the appearance, user experience, and strengthen the companys online presence. Update and develop existing product photo placements on the website with a new layout to improve the visual appearance and appeal to website visitors.',
+      tech_stack: ['HTML', 'CSS', 'Laravel Blade', 'MySQL', 'Figma'],
+      source_link:
+        'https://www.1010-group.com',
+    },
+    {
+      image_url: 'https://drive.google.com/thumbnail?id=1JxPi-vTTIRJL8pc8IpSSEDSYAaDx4rzE&sz=w1000-h1000',
+      project_name: 'Manajemen Risiko SPBE',
+      description:
+        'Re-developing SPBE Risk Management from the previous system using Microsoft Excel to a Website. Updating and developing several previous systems to be automatic, namely setting risk priorities based on the highest risk value, correcting the value based on risk appetite to carry out a handling plan. Updating and developing report monitoring that was previously via WhatsApp chat to report monitoring in the user dashboard. Creating an email notification feature for the handling plan schedule.',
+      tech_stack: ['Laravel', 'MySQL', 'Figma', 'Canva'],
+      source_link:
+        'https://xd.adobe.com/view/dfd74d8e-99b2-497e-9184-ccc7c11577be-8a84/',
+    },
+    {
+      image_url: 'https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000',
+      project_name: 'Library Komikku',
+      description:
+        'User needs, activities carried out, problems, and challenges of the project being worked on. The purpose of this user research is to find out user needs, inspire design, evaluate solutions, and measure the results/impacts. The project that I will create is to design an online comic library application that has several accesses to read books and there are several types of books, namely novels, learning, comics. The user persona here is an example of a user who really wants to read books and is lazy or cannot travel to a bookstore or library to borrow and buy books, or maybe a user who wants to read books, but the books he wants to read are too expensive, users who want to collect books but the books do not want to be damaged because they are placed for too long or displayed for too long.',
+      tech_stack: ['Adobe XD', 'Canva'],
+      source_link:
+        'https://xd.adobe.com/view/dfd74d8e-99b2-497e-9184-ccc7c11577be-8a84/',
+    },
+
+  ]
+
+  return (
+    <div className="projects" id="projects">
+      <h1 className="title projects-title">Featured Projects</h1>
+      <p className="projects-para">
+      During my development journey, I have been involved in various interesting projects that span both frontend and backend development. Each project provided an opportunity to learn and develop new skills, as well as overcome various challenges. Here are some interesting moments in my development history.
+      </p>
+      <div className="projects-container">
+        {projectData.map((project, id) => (
+          <ProjectCard
+            key={id}
+            image={project.image_url}
+            title={project.project_name}
+            description={project.description}
+            stacks={project.tech_stack}
+            source_link={project.source_link}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Projects
