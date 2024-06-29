@@ -29,7 +29,7 @@ const Projects = () => {
         'Re-developing SPBE Risk Management from the previous system using Microsoft Excel to a Website. Updating and developing several previous systems to be automatic, namely setting risk priorities based on the highest risk value, correcting the value based on risk appetite to carry out a handling plan. Updating and developing report monitoring that was previously via WhatsApp chat to report monitoring in the user dashboard. Creating an email notification feature for the handling plan schedule.',
       tech_stack: ['Laravel', 'MySQL', 'Figma', 'Canva'],
       source_link:
-        'https://xd.adobe.com/view/dfd74d8e-99b2-497e-9184-ccc7c11577be-8a84/',
+        '',
     },
     {
       image_url: 'https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000',
@@ -38,7 +38,7 @@ const Projects = () => {
         'User needs, activities carried out, problems, and challenges of the project being worked on. The purpose of this user research is to find out user needs, inspire design, evaluate solutions, and measure the results/impacts. The project that I will create is to design an online comic library application that has several accesses to read books and there are several types of books, namely novels, learning, comics. The user persona here is an example of a user who really wants to read books and is lazy or cannot travel to a bookstore or library to borrow and buy books, or maybe a user who wants to read books, but the books he wants to read are too expensive, users who want to collect books but the books do not want to be damaged because they are placed for too long or displayed for too long.',
       tech_stack: ['Adobe XD', 'Canva'],
       source_link:
-        'https://xd.adobe.com/view/dfd74d8e-99b2-497e-9184-ccc7c11577be-8a84/',
+        '',
     },
 
   ]
