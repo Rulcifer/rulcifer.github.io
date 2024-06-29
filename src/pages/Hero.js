@@ -11,11 +11,6 @@ const Hero = () => (
         <h3 className="tagline">I do UI/UX design, software engineer,  analyze business processes and stream on TikTok for fun!</h3>
         <p className="paragraph">I am a software engineer from Surabaya, I am passionate about creating amazing digital experiences. I am very enthusiastic about creating amazing digital experiences. I bring ideas to life in the virtual world with a keyboard as a paintbrush and lines of code as a canvas. Let's join and make your digital dreams come true. Contact us, and let's start this exciting journey together!</p>
         <div className="hero-btns">
-          <button className="hire-me">
-            <a href="https://drive.google.com/file/d/1dnjHaiUL986_ipYBeJqXycvkwsXsXL5l/view?usp=drive_link" target="_blank" rel="noreferrer">
-              GET MY CV
-            </a>
-          </button>
           <button className="lets-talk">
             <Link spy smooth offset={50} duration={500} to="contact">
               LET'S TALK
