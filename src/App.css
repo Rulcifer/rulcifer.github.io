@@ -39,7 +39,7 @@ a {
 }
 
 .App {
-  position: absolute;
+  /* position: absolute; */
   background-color: #141414;
   animation: static 3s steps(5, end) infinite;
   z-index: 999;
