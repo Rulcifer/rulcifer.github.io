@@ -39,7 +39,7 @@ a {
 }
 
 .App {
-  /* position: relative; */
+  position: absolute;
   background-color: #141414;
   animation: static 3s steps(5, end) infinite;
   z-index: 999;
@@ -89,7 +89,7 @@ footer h3 {
 }
 
 .background__lights {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
