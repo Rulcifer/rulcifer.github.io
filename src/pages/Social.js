@@ -82,7 +82,7 @@ const Social = () => {
                 </div>
               </div>
               <div className="container_link">
-                <div className="link_outer">
+                {/* <div className="link_outer">
                   <a href="https://tako.id/@Rulcifer" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
                     <div className="link_icon">
                       <img className="link_image" src="https://drive.google.com/thumbnail?id=1NzGr8eepk9-N4-34RcYS_TfXPGPUlos5" alt="GitHub" />
@@ -94,7 +94,7 @@ const Social = () => {
                     </div>
                     <div className="link_end"></div>
                   </a>
-                </div>
+                </div> */}
               </div>
               <div className="container_link">
                 <div className="link_outer">
