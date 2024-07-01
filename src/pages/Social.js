@@ -157,9 +157,13 @@ const Social = () => {
                 </div>
               </div>
             </div>
+            <div className="copyright">
+              <p>&copy; 2024 Rulcifer.</p>
+            </div>
           </div>
         </div>
       </div>
+    
     </section>
   );
 };
