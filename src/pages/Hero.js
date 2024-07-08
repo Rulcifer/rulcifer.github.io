@@ -8,7 +8,7 @@ const Hero = () => (
     <div className="hero-overlay">
       <div className="description">
         <h2 className="title ">Hai, i am Sahrul Rafi Zulfitra</h2>
-        <h3 className="tagline">I do UI/UX design, software engineer,  analyze business processes and stream on TikTok for fun!</h3>
+        <h3 className="tagline">I do UI/UX design, software engineer,  and analyze business processes.</h3>
         <p className="paragraph">I am a software engineer from Surabaya, I am passionate about creating amazing digital experiences. I am very enthusiastic about creating amazing digital experiences. I bring ideas to life in the virtual world with a keyboard as a paintbrush and lines of code as a canvas. Let's join and make your digital dreams come true. Contact us, and let's start this exciting journey together!</p>
         <div className="hero-btns">
           <button className="lets-talk">
@@ -55,13 +55,13 @@ const Hero = () => (
       >
         <i className="fa-brands fa-steam" />
       </a>
-      <a
+      {/* <a
         href="https://www.tiktok.com/@rulcifer"
         target="_blank"
         rel="noreferrer"
       >
         <i className="fa-brands fa-tiktok" />
-      </a>
+      </a> */}
     </div>
   </div>
 );
