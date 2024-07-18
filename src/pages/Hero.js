@@ -31,13 +31,13 @@ const Hero = () => (
       >
         <i className="fa-brands fa-linkedin-in" />
       </a>
-      <a
-        href="https://www.youtube.com/@rulcifer"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i className="fa-brands fa-youtube" />
-      </a>
+      // <a
+      //   href="https://www.youtube.com/@rulcifer"
+      //   target="_blank"
+      //   rel="noreferrer"
+      // >
+      //   <i className="fa-brands fa-youtube" />
+      // </a>
       <a href="https://discord.com/invite/M5AERFR" target="_blank" rel="noreferrer">
         <i className="fa-brands fa-discord" />
       </a>
