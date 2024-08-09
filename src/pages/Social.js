@@ -26,7 +26,7 @@ const Social = () => {
                 <span style={{ fontWeight: 'bold' }}>Rulcifer</span>
               </div>
               <div className="text text_center">
-                <h4>Hai brokk, Aku bakal Live Project Zomboid tiap hari Jumat sampai Minggu, selain hari itu aku bakal stream random game, Enjoy gaiss!</h4>
+                <h4>Hai brokk, Aku live tiap weekend semoga kalian enjoy dengan kontennya gaiss!</h4>
               </div>
               <div className="container_social">
                 <div className="social-tree">
