@@ -26,6 +26,7 @@ import MySQL from '../assets/mysql.png'
 import Laragon from '../assets/laragon.svg'
 import Discordjs from '../assets/discordjs.png'
 import AdobeXD from '../assets/adobe-xd.svg'
+import AdobePSCS6 from '../assets/Adobe_Photoshop_CS6.png'
 
 const About = () => (
   <section className="about" id="about">
@@ -188,6 +189,10 @@ const About = () => (
         <div className="skill">
           <img src={AdobeXD} alt="" />
           <p>Adobe Xd</p>
+        </div>
+        <div className="skill">
+          <img src={AdobePSCS6} alt="" />
+          <p>Adobe Photoshop CS6</p>
         </div>
       </div>
       <h2 className="skill-title">Communication</h2>
