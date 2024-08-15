@@ -18,6 +18,7 @@ import JavaScript from '../assets/javascript.png'
 import PostMan from '../assets/postman.png'
 import WordPress from '../assets/wordpress.png'
 import Tailwind from '../assets/tailwindcss.svg'
+import Tailwind from '../assets/angular.png'
 import Laravel from '../assets/laravel.svg'
 import Java from '../assets/java.png'
 import Nodejs from '../assets/nodejs.svg'
@@ -90,6 +91,13 @@ const About = () => (
             alt=""
           />
           <p>Tailwind CSS</p>
+        </div>
+        <div className="skill">
+          <img
+            src={Angular}
+            alt=""
+          />
+          <p>Angular</p>
         </div>
       </div>
       <h2 className="skill-title">Back-End</h2>
