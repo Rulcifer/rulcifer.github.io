@@ -192,7 +192,7 @@ const About = () => (
         </div>
         <div className="skill">
           <img src={AdobePSCS6} alt="" />
-          <p>Adobe Photoshop CS6</p>
+          <p>Photoshop CS6</p>
         </div>
       </div>
       <h2 className="skill-title">Communication</h2>
