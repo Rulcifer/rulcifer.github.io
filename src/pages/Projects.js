@@ -49,6 +49,15 @@ const Projects = () => {
       source_link:
         'https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000',
     },
+    {
+      image_url: 'https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000',
+      project_name: 'App Kuliahku',
+      description:
+        'I have developed a mobile application using Java with Android Studio and Firebase for database storage. For the design and coloring of the app cover, I used Canva. The application, which I call appkuliahku, includes several key features: the Schedule menu for displaying my class schedule, the List menu which allows me to add data to the schedule, and the About Me menu that contains user profile information.',
+      tech_stack: ['Android Studio', 'Java', 'Canva'],
+      source_link:
+        'https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000',
+    },
 
   ]
 
