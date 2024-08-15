@@ -32,6 +32,15 @@ const Projects = () => {
         'https://drive.google.com/thumbnail?id=1JxPi-vTTIRJL8pc8IpSSEDSYAaDx4rzE&sz=w1000-h1000',
     },
     {
+      image_url: 'https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000',
+      project_name: 'Bisnis Kita Blog',
+      description:
+        'Created and developed the Blog BisnisKita website, which serves as a blog for articles and current news in the business world. The website allows visitors to read articles without logging in, while registered users can access and comment on articles. Users who are selected as authors can write and submit articles for publication, and the system admin is responsible for validating the submitted articles and determining who is eligible to become an author. With these features, our website aims to be a reliable and interactive source of business information, providing a platform for authors to share their knowledge.',
+      tech_stack: ['Angular', 'Laravel', 'MySQL', 'Figma', 'Canva'],
+      source_link:
+        'https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000',
+    },
+    {
       image_url: 'https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000',
       project_name: 'Library Komikku',
       description:
