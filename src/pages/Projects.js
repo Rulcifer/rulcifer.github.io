@@ -35,7 +35,7 @@ const Projects = () => {
       image_url: 'https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000',
       project_name: 'Bisnis Kita Blog',
       description:
-        'Created and developed the Blog BisnisKita website, which serves as a blog for articles and current news in the business world. The website allows visitors to read articles without logging in, while registered users can access and comment on articles. Users who are selected as authors can write and submit articles for publication, and the system admin is responsible for validating the submitted articles and determining who is eligible to become an author. With these features, our website aims to be a reliable and interactive source of business information, providing a platform for authors to share their knowledge.',
+        'As a full-stack developer, I have designed and built the BisnisKita Blog website. This platform serves as a blog for the latest articles and news in the business world. Visitors can read articles without logging in, while registered users can access and comment on posts. Selected users can act as authors, allowing them to write and submit articles for publication. System admins are responsible for validating submitted content and selecting eligible authors. With these features, the website aims to be a reliable and interactive source of business information, offering a platform for authors to share their insights.',
       tech_stack: ['Angular', 'Laravel', 'MySQL', 'Figma', 'Canva'],
       source_link:
         'https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000',
