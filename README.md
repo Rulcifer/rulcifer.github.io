@@ -29,7 +29,7 @@ This Personal Portfolio is a dynamic and interactive portfolio website built wit
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Prantosh Biswas**
+👤 **Sahrul Rafi Zulfitra**
 
 - GitHub: [@Rulcifer](https://github.com/Rulcifer)
 - LinkedIn: [Sahrul Rafi Zulfitra](https://www.linkedin.com/in/sahrul-rafi-zulfitra-7a3bb6172/)
