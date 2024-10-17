@@ -1,21 +1,63 @@
-import React from 'react';
-import './Social.css'
+import React, { useEffect, useState, useRef } from "react";
+import "./Social.css";
+import backgroundImage from "../assets/gtr.png";
+import backgroundMusic from "../assets/music/billie.mp3";
 
 const Social = () => {
+  const [visitorCount, setVisitorCount] = useState(0);
+  const [volume, setVolume] = useState(100);
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const storedCount = localStorage.getItem("visitorCount");
+
+    if (storedCount) {
+      setVisitorCount(parseInt(storedCount, 10));
+    } else {
+      setVisitorCount(0);
+    }
+
+    const newCount = visitorCount + 1;
+    setVisitorCount(newCount);
+    localStorage.setItem("visitorCount", newCount);
+  }, []);
+
   return (
-    <section className="main" style={{ 
-      '--dark-color': '#000',
-      '--light-color': '#fff',
-      'background-color': 'rgb(209 213 219 / 1)',
-      '--text-color': '#fcfcfc',
-      '--link-color': '51, 51, 51',
-      '--link-background': '239, 239, 239',
-      '--link-shadow': '102, 102, 102',
-      '--link-border': '51, 51, 51',
-      'color': '51, 51, 51'
-    }}>
+    <section
+      className="main"
+      style={{
+        "--dark-color": "#000",
+        "--light-color": "#fff",
+        "background-color": "rgb(209 213 219 / 1)",
+        "--text-color": "#fcfcfc",
+        "--link-color": "51, 51, 51",
+        "--link-background": "239, 239, 239",
+        "--link-shadow": "102, 102, 102",
+        "--link-border": "51, 51, 51",
+        color: "51, 51, 51",
+      }}
+    >
+      <audio src={backgroundMusic} autoPlay loop volume={volume / 100} />{" "}
+      {/* Menambahkan musik latar */}
       <div className="background">
-        <div className="background_image"></div>
+        <div
+          className="background_image"
+          style={{
+            backgroundImage: `url(${backgroundImage})`, // Gunakan gambar yang diimpor
+            backgroundPosition: "center",
+            backgroundRepeat: "repeat",
+            backgroundSize: "cover",
+            position: "fixed",
+            top: "-2.5rem",
+            left: "-2.5rem",
+            right: "-2.5rem",
+            bottom: "-2.5rem",
+            filter: "blur(5px)",
+          }}
+        >
+          <div className="overlay" />
+        </div>
       </div>
       <div className="bg_container">
         <div className="container">
@@ -23,13 +65,35 @@ const Social = () => {
             <div className="profile">
               <div className="profile_image"></div>
               <div className="text text_center text_large">
-                <span style={{ fontWeight: 'bold' }}>Rulcifer</span>
+                <span style={{ fontWeight: "bold" }}>Rulcifer</span>
               </div>
               <div className="text text_center">
-                <h4>Hai brokk, Aku live tiap weekend semoga kalian enjoy dengan kontennya gaiss!</h4>
+                <h4>
+                  Hai brokk, Aku live tiap weekend semoga kalian enjoy dengan
+                  kontennya gaiss!
+                </h4>
               </div>
               <div className="container_social">
                 <div className="social-tree">
+                  <a
+                    href="https://saweria.co/rulch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social_link social_link_circle"
+                  >
+                    <img
+                      src="https://saweria.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcapy_happy.603c7293.svg&w=384&q=75"
+                      alt="Saweria"
+                      className="social_icon"
+                      style={{
+                        width: "105%",
+                        height: "105%",
+                        maxWidth: "105%",
+                        maxHeight: "105%",
+                      }}
+                    />
+                    <span className="sr-only">Saweria</span>
+                  </a>
                   <a
                     href="https://www.youtube.com/@rulcifer"
                     target="_blank"
@@ -37,14 +101,40 @@ const Social = () => {
                     className="social_link social_link_circle"
                   >
                     <svg
-                      viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="social_icon"
+                      width="80%"
+                      height="80%"
+                      viewBox="1.99 5 20.01 14.01"
+                      style={{
+                        maxWidth: "90%",
+                        maxHeight: "90%",
+                      }}
                     >
-                      <title>Youtube</title>
-                      <path d="M12,20.55c-.3,0-7.279-.006-9.115-.5A3.375,3.375,0,0,1,.5,17.665,29.809,29.809,0,0,1,0,12,29.824,29.824,0,0,1,.5,6.334,3.375,3.375,0,0,1,2.885,3.948c1.836-.492,8.819-.5,9.115-.5s7.279.006,9.115.5A3.384,3.384,0,0,1,23.5,6.334,29.97,29.97,0,0,1,24,12a29.97,29.97,0,0,1-.5,5.666,3.384,3.384,0,0,1-2.388,2.386C19.279,20.544,12.3,20.55,12,20.55Zm0-16.1c-.072,0-7.146.006-8.857.464A2.377,2.377,0,0,0,1.464,6.593,29.566,29.566,0,0,0,1,12a29.566,29.566,0,0,0,.464,5.407,2.377,2.377,0,0,0,1.679,1.679c1.711.458,8.785.464,8.857.464s7.146-.006,8.857-.464a2.377,2.377,0,0,0,1.679-1.679A29.66,29.66,0,0,0,23,12a29.66,29.66,0,0,0-.464-5.407h0a2.377,2.377,0,0,0-1.679-1.679C19.146,4.456,12.071,4.45,12,4.45ZM9.7,15.95a.5.5,0,0,1-.5-.5V8.55a.5.5,0,0,1,.75-.433l5.975,3.45a.5.5,0,0,1,0,.866L9.95,15.883A.5.5,0,0,1,9.7,15.95Zm.5-6.534v5.168L14.675,12Z" />
+                      <path
+                        fill="currentColor"
+                        d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"
+                      ></path>
                     </svg>
                     <span className="sr-only">Youtube</span>
+                  </a>
+                  <a
+                    href="https://discord.gg/M5AERFR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social_link social_link_circle"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="90%"
+                      height="90%"
+                      viewBox="1.96 4.26 20.03 15.53"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1a14.66 14.66 0 0 0-4.58 0a10.14 10.14 0 0 0-.53-1.1a16 16 0 0 0-4.13 1.3a17.33 17.33 0 0 0-3 11.59a16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83a3.39 3.39 0 0 0 .42-.33a11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84a12.41 12.41 0 0 0 1.08 1.78a16.44 16.44 0 0 0 5.06-2.59a17.22 17.22 0 0 0-3-11.59a16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.93 1.93 0 0 1 1.8 2a1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.92 1.92 0 0 1 1.8 2a1.92 1.92 0 0 1-1.8 2z"
+                      ></path>
+                    </svg>
+                    <span className="sr-only">Discord</span>
                   </a>
                   <a
                     href="https://www.tiktok.com/@rulcifer"
@@ -53,120 +143,61 @@ const Social = () => {
                     className="social_link social_link_circle"
                   >
                     <svg
-                      viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="social_icon"
+                      width="78%"
+                      height="78%"
+                      viewBox="3.2 2 17.43 19.99"
                     >
-                      <title>TikTok</title>
                       <path
-                        d="M9.37,23.5a7.468,7.468,0,0,1,0-14.936.537.537,0,0,1,.538.5v3.8a.542.542,0,0,1-.5.5,2.671,2.671,0,1,0,2.645,2.669.432.432,0,0,1,0-.05V1a.5.5,0,0,1,.5-.5h3.787a.5.5,0,0,1,.5.5A4.759,4.759,0,0,0,21.59,5.76a.5.5,0,0,1,.5.5L22.1,10a.533.533,0,0,1-.519.515,9.427,9.427,0,0,1-4.741-1.268v6.789A7.476,7.476,0,0,1,9.37,23.5ZM8.908,9.585a6.466,6.466,0,1,0,6.93,6.447V8.326a.5.5,0,0,1,.791-.407A8.441,8.441,0,0,0,21.1,9.5l-.006-2.76A5.761,5.761,0,0,1,15.859,1.5H13.051V16.032a.458.458,0,0,1,0,.053,3.672,3.672,0,1,1-4.14-3.695Z"
-                      />
+                        fill="currentColor"
+                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74a2.89 2.89 0 0 1 2.31-4.64a2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                      ></path>
                     </svg>
                     <span className="sr-only">TikTok</span>
                   </a>
                 </div>
               </div>
-              <div className="container_link">
-                <div className="link_outer">
-                  <a href="https://saweria.co/rulch" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=1C1cgRnCot9pcr2W225iVFH8v-9DUBwMP" alt="Git" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Saweria & Mediashare</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div>
-              </div>
-              <div className="container_link">
-                {/* <div className="link_outer">
-                  <a href="https://tako.id/@Rulcifer" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=1NzGr8eepk9-N4-34RcYS_TfXPGPUlos5" alt="GitHub" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Tako Coin</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div> */}
-              </div>
-              <div className="container_link">
-                <div className="link_outer">
-                  <a href="https://discord.gg/M5AERFR" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=1ewsFHFT04iWSgt7oSCvZC9FVvZkcT9rY" alt="CodePen" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Discord Server</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div>
-              </div>
-              <div className="container_link">
-                <div className="link_outer">
-                  <a href="https://www.youtube.com/watch?v=UrQrlrLDNw4&list=PLr6vFHGUyD2CuQk3Yh4AaoTwwYEs2XGsu&ab_channel=Rulcifer" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=17IfMuB1Ezjom1NkwYg7pCt0k8CmJhCHy" alt="CodePen" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Replay Live Project Zomboid</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div>
-              </div>
-              <div className="container_link">
-                <div className="link_outer">
-                  <a href="https://www.youtube.com/watch?v=7Ucl-URXxBE&list=PLr6vFHGUyD2BibzE69sou9hx7iFQYB2Zv&index=1&ab_channel=Rulcifer" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=14yfrqpfWbcqJarTGayx5nCpR4h9J83Aq" alt="CodePen" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Kisah Mail Project Zomboid</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div>
-              </div>
-              <div className="container_link">
-                <div className="link_outer">
-                  <a href="https://www.youtube.com/watch?v=jB4DT0Krt98&list=PLr6vFHGUyD2D5t_YEHsiKbNLMft5SllZP&index=1&ab_channel=Rulcifer" target="_blank" rel="noopener noreferrer" className="link link_circle link_circle_shadow">
-                    <div className="link_icon">
-                      <img className="link_image" src="https://drive.google.com/thumbnail?id=1Zq2g2MhncpKKC_9OUV549NnHeAzJeDNR" alt="CodePen" />
-                    </div>
-                    <div className="link_outer_text">
-                      <div className="text text_center">
-                        <strong>Main Horror</strong>
-                      </div>
-                    </div>
-                    <div className="link_end"></div>
-                  </a>
-                </div>
-              </div>
             </div>
-            <div className="copyright">
-              <p>&copy; 2024 Rulcifer.</p>
+
+            {/* Visitor Count Display */}
+            <div
+              className="user-profile-views"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                bottom: "12px",
+                left: "15px",
+              }}
+            >
+              <span
+                style={{
+                  fontWeight: 550,
+                  fontSize: "14.5px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  style={{ marginRight: "5px" }}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
+                  ></path>
+                </svg>
+                {visitorCount}
+              </span>
             </div>
+            {/* Visitor Count Display */}
           </div>
         </div>
       </div>
-    
     </section>
   );
 };
 
 export default Social;
-
