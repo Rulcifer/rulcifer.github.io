@@ -150,6 +150,102 @@
   border-radius: 15px;
 }
 
+
+
+.volume-container {
+  position: absolute; /* Position relative to the parent */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  z-index: 10; /* Ensure it is on top of other elements */
+}
+
+.volume-button-container {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center vertically */
+  border: none;
+}
+
+.play-button {
+  background-color: var(--volumeBackgroundcolor);
+  background-image: var(--containerGradient);
+  background-origin: border-box;
+  color: white;
+  border: none;
+}
+
+.play-button:hover {
+  background-color: var(--hoverBackgroundColor);
+  border: none;
+  margin: 0.1rem;
+  color: white;
+}
+
+.volume-slider {
+  -webkit-appearance: none; /* Menghapus gaya default */
+  width: 100%; /* Lebar bar */
+  height: 4px; /* Tinggi bar */
+  background: var(--volumeTrackColor); /* Ganti dengan warna jalur volume */
+  border-radius: 5px; /* Membuat sudut melengkung */
+  outline: none; /* Menghapus outline */
+}
+
+/* Gaya untuk thumb (pengatur) */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Menghapus gaya default */
+  appearance: none; /* Menghapus gaya default */
+  width: 20px; /* Lebar thumb */
+  height: 20px; /* Tinggi thumb */
+  background: var(--volumeThumbColor); /* Ganti dengan warna thumb volume */
+  border-radius: 50%; /* Membuat thumb menjadi bulat */
+  cursor: pointer; /* Menampilkan kursor pointer */
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--volumeThumbColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider {
+  -webkit-appearance: none; /* Menghapus gaya default */
+  width: 100%; /* Lebar bar */
+  height: 4px; /* Tinggi bar */
+  background: var(--volumeTrackColor); /* Ganti dengan warna jalur volume */
+  border-radius: 5px; /* Membuat sudut melengkung */
+  outline: none; /* Menghapus outline */
+}
+
+/* Gaya untuk thumb (pengatur) */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Menghapus gaya default */
+  appearance: none; /* Menghapus gaya default */
+  width: 20px; /* Lebar thumb */
+  height: 20px; /* Tinggi thumb */
+  background: var(--volumeThumbColor); /* Ganti dengan warna thumb volume */
+  border-radius: 50%; /* Membuat thumb menjadi bulat */
+  cursor: pointer; /* Menampilkan kursor pointer */
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--volumeThumbColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--volumeThumbColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
 .picture {
   width: 7rem;
   margin: 0.75rem auto 0.75rem auto;

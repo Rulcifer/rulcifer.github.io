@@ -5,6 +5,9 @@ import backgroundMusic from "../assets/music/billie.mp3";
 
 const Social = () => {
   const [visitorCount, setVisitorCount] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false); // State untuk mengelola status pemutaran
+  const [volume, setVolume] = useState(0.5); // State untuk mengelola volume
+  const [showVolumeSlider, setShowVolumeSlider] = useState(false); // State untuk mengontrol tampilan slider volume
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -21,11 +24,30 @@ const Social = () => {
     localStorage.setItem("visitorCount", newCount);
   }, []);
 
-  useEffect(() => {
+  const handleAudioLoad = () => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.3;
+      audioRef.current.volume = volume; // Mengatur volume
+      audioRef.current.play(); // Mulai memutar audio
+      setIsPlaying(true); // Mengubah status pemutaran
     }
-  }, [audioRef]);
+  };
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause(); // Hentikan audio jika sedang bermain
+      setIsPlaying(false);
+    } else {
+      handleAudioLoad(); // Mulai audio jika tidak bermain
+    }
+  };
+
+  const handleVolumeChange = (event) => {
+    const newVolume = parseFloat(event.target.value);
+    setVolume(newVolume);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume; // Mengatur volume audio
+    }
+  };
 
   return (
     <section
@@ -42,7 +64,7 @@ const Social = () => {
         color: "51, 51, 51",
       }}
     >
-      <audio src={backgroundMusic} autoPlay loop style={{ display: "none" }} />
+      <audio ref={audioRef} src={backgroundMusic} loop />
       <div className="background">
         <div
           className="background_image"
@@ -62,7 +84,114 @@ const Social = () => {
           <div className="overlay" />
         </div>
       </div>
+
       <div className="bg_container">
+        {/* Tombol untuk memutar musik */}
+        <div
+          className="volume-container"
+          style={{ position: "absolute", top: "10px", left: "10px" }}
+        >
+          <div
+            className="volume-button-container"
+            onMouseEnter={() => setShowVolumeSlider(true)}
+            onMouseLeave={() => setShowVolumeSlider(false)} // Hide slider when mouse leaves
+          >
+            <button onClick={togglePlayPause} className="play-button">
+              {isPlaying ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                >
+                  <defs>
+                    <mask id="ipTVolumeNotice0">
+                      <g fill="none" stroke="#fff" strokeWidth="4">
+                        <path
+                          fill="#555"
+                          strokeLinejoin="round"
+                          d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M32 15a11.91 11.91 0 0 1 1.684 1.859A12.07 12.07 0 0 1 36 24c0 2.654-.846 5.107-2.278 7.09A11.936 11.936 0 0 1 32 33"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          d="M34.236 41.186C40.084 37.696 44 31.305 44 24c0-7.192-3.796-13.496-9.493-17.02"
+                        />
+                      </g>
+                    </mask>
+                  </defs>
+                  <path
+                    fill="currentColor"
+                    d="M0 0h48v48H0z"
+                    mask="url(#ipTVolumeNotice0)"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                >
+                  <defs>
+                    <mask id="ipTVolumeMute0">
+                      <mask
+                        id="ipTVolumeMute1"
+                        width="13"
+                        height="13"
+                        x="30"
+                        y="18"
+                        maskUnits="userSpaceOnUse"
+                        style={{ maskType: "alpha" }}
+                      >
+                        <path d="M30 18h13v13H30z" />
+                      </mask>
+                      <g
+                        fill="none"
+                        stroke="#fff"
+                        strokeLinejoin="round"
+                        strokeWidth="4"
+                      >
+                        <g strokeLinecap="round" mask="url(#ipTVolumeMute1)">
+                          <path d="m40.735 20.286l-8.486 8.485m.001-8.485l8.485 8.485" />
+                        </g>
+                        <path
+                          fill="#555"
+                          d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"
+                        />
+                      </g>
+                    </mask>
+                  </defs>
+                  <path
+                    fill="currentColor"
+                    d="M0 0h48v48H0z"
+                    mask="url(#ipTVolumeMute0)"
+                  />
+                </svg>
+              )}
+            </button>
+            {showVolumeSlider && (
+              <input
+                type="range"
+                className="volumeSlider"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                style={{
+                  width: "100px",
+                  marginLeft: "10px",
+                }}
+              />
+            )}
+          </div>
+        </div>
+
         <div className="container">
           <div className="container_component">
             <div className="profile">
