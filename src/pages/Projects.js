@@ -70,34 +70,34 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
     },
-    {
-      image_url:
-        "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-      project_name: "Mamoney: Aplikasi Manajemen Keuangan - Mobile Version",
-      description:
-        "I have designed and built the Mamoney website. Mamoney is a Flutter-based mobile application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
-      tech_stack: ["Flutter", "Firebase", "Blocs", "Figma", "Canva", "Laragon"],
-      source_link:
-        "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    },
-    {
-      image_url:
-        "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-      project_name: "Mamoney: Aplikasi Manajemen Keuangan",
-      description:
-        "I have designed and built the Mamoney website. Mamoney is a ReactJS and Tailwind CSS-based web application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
-      tech_stack: [
-        "React Js",
-        "Tailwind CSS",
-        "MySQL",
-        "Postman",
-        "Figma",
-        "Canva",
-        "Laragon",
-      ],
-      source_link:
-        "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    },
+    // {
+    //   image_url:
+    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
+    //   project_name: "Mamoney: Aplikasi Manajemen Keuangan - Mobile Version",
+    //   description:
+    //     "I have designed and built the Mamoney website. Mamoney is a Flutter-based mobile application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
+    //   tech_stack: ["Flutter", "Firebase", "Blocs", "Figma", "Canva", "Laragon"],
+    //   source_link:
+    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
+    // },
+    // {
+    //   image_url:
+    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
+    //   project_name: "Mamoney: Aplikasi Manajemen Keuangan",
+    //   description:
+    //     "I have designed and built the Mamoney website. Mamoney is a ReactJS and Tailwind CSS-based web application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
+    //   tech_stack: [
+    //     "React Js",
+    //     "Tailwind CSS",
+    //     "MySQL",
+    //     "Postman",
+    //     "Figma",
+    //     "Canva",
+    //     "Laragon",
+    //   ],
+    //   source_link:
+    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
+    // },
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000",
