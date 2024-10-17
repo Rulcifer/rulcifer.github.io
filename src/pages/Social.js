@@ -32,6 +32,20 @@ const Social = () => {
     }
   };
 
+  useEffect(() => {
+    const playAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.play();
+      }
+    };
+
+    document.addEventListener("click", playAudio);
+
+    return () => {
+      document.removeEventListener("click", playAudio);
+    };
+  }, []);
+
   const togglePlayPause = () => {
     if (isPlaying) {
       audioRef.current.pause(); // Hentikan audio jika sedang bermain
@@ -64,7 +78,7 @@ const Social = () => {
         color: "51, 51, 51",
       }}
     >
-      <audio ref={audioRef} src={backgroundMusic} loop />
+      <audio ref={audioRef} src={backgroundMusic} autoPlay loop />
       <div className="background">
         <div
           className="background_image"
