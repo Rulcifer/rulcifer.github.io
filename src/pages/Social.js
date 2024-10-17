@@ -5,8 +5,6 @@ import backgroundMusic from "../assets/music/billie.mp3";
 
 const Social = () => {
   const [visitorCount, setVisitorCount] = useState(0);
-  const [volume, setVolume] = useState(100);
-  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -23,6 +21,12 @@ const Social = () => {
     localStorage.setItem("visitorCount", newCount);
   }, []);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3;
+    }
+  }, [audioRef]);
+
   return (
     <section
       className="main"
@@ -38,7 +42,7 @@ const Social = () => {
         color: "51, 51, 51",
       }}
     >
-      <audio src={backgroundMusic} autoPlay loop volume={volume / 100} />{" "}
+      <audio src={backgroundMusic} autoPlay loop style={{ display: "none" }} />
       <div className="background">
         <div
           className="background_image"
