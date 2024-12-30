@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Projects.css";
 import ProjectCard from "../components/ProjectCard";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projectData = [
+    //COMPANY PROFILE POHON PERINDANG
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1uuFf3p2z4Og7dxj6R_pAuTu-BeRSItZG&sz=w1000-h1000",
@@ -13,6 +16,8 @@ const Projects = () => {
       tech_stack: ["Wordpress", "Canva", "Adobe XD"],
       source_link: "https://www.pohonperindang.com",
     },
+
+    //FRONTEND 1010-GROUP
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1ieDtg_mQfLPCPpEenG99-L-qr7oOZmNQ&sz=w1000-h1000",
@@ -31,6 +36,8 @@ const Projects = () => {
       ],
       source_link: "https://www.1010-group.com",
     },
+
+    //MANAJEMEN RISIKO SPBE DISKOMINFO
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1JxPi-vTTIRJL8pc8IpSSEDSYAaDx4rzE&sz=w1000-h1000",
@@ -51,6 +58,8 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1JxPi-vTTIRJL8pc8IpSSEDSYAaDx4rzE&sz=w1000-h1000",
     },
+
+    //BISNISKITA BLOG
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
@@ -70,34 +79,8 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
     },
-    // {
-    //   image_url:
-    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    //   project_name: "Mamoney: Aplikasi Manajemen Keuangan - Mobile Version",
-    //   description:
-    //     "I have designed and built the Mamoney website. Mamoney is a Flutter-based mobile application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
-    //   tech_stack: ["Flutter", "Firebase", "Blocs", "Figma", "Canva", "Laragon"],
-    //   source_link:
-    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    // },
-    // {
-    //   image_url:
-    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    //   project_name: "Mamoney: Aplikasi Manajemen Keuangan",
-    //   description:
-    //     "I have designed and built the Mamoney website. Mamoney is a ReactJS and Tailwind CSS-based web application designed to help users track their expenses and income efficiently. With a responsive and intuitive interface, Mamoney allows users to record every financial transaction and provides a clear visualization of their cash flow. This application not only makes it easier to manage personal finances but also encourages users to be more aware of their spending habits, making financial management easier and more effective.",
-    //   tech_stack: [
-    //     "React Js",
-    //     "Tailwind CSS",
-    //     "MySQL",
-    //     "Postman",
-    //     "Figma",
-    //     "Canva",
-    //     "Laragon",
-    //   ],
-    //   source_link:
-    //     "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
-    // },
+
+    //LIBRARY KOMIKU
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000",
@@ -108,6 +91,8 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1IJO4_99KWxE0YZ-kYkuXM1VNOhwdUOPN&sz=w1000-h1000",
     },
+
+    //APP KULIAHKU
     {
       image_url:
         "https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000",
@@ -118,7 +103,27 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000",
     },
+
+    //MAMONEY
+    {
+      image_url:
+        "https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000",
+      project_name: "Mamoney",
+      description:
+        "I have developed a mobile application using Java with Android Studio and Firebase for database storage. For the design and coloring of the app cover, I used Canva. The application, which I call appkuliahku, includes several key features: the Schedule menu for displaying my class schedule, the List menu which allows me to add data to the schedule, and the About Me menu that contains user profile information.",
+      tech_stack: ["React JS", "Tailwind CSS", "Laravel"],
+      source_link:
+        "https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000",
+    },
   ];
+
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <div className="projects" id="projects">
@@ -133,6 +138,7 @@ const Projects = () => {
       <div className="projects-container">
         {projectData.map((project, id) => (
           <ProjectCard
+            onClick={() => handleOpenModal(project)}
             key={id}
             image={project.image_url}
             title={project.project_name}
@@ -142,6 +148,65 @@ const Projects = () => {
           />
         ))}
       </div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <div
+          className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
+          onClick={handleCloseModal} // Klik area luar untuk menutup modal
+        >
+          <div
+            className="bg-gray-900 rounded-2xl shadow-xl w-[70%] max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl p-6 max-h-[60vh] relative p-6"
+            onClick={(e) => e.stopPropagation()} // Hentikan klik modal menutup
+          >
+            {/* Title */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 mb-4">
+              {selectedProject.project_name}
+            </h2>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start">
+              {/* Image */}
+              <img
+                src={selectedProject.image_url}
+                alt={selectedProject.project_name}
+                className="rounded-xl mb-4 w-full md:w-1/2 object-cover h-56 sm:h-72 md:h-86"
+              />
+
+              {/* Description */}
+              <div className="flex-1 md:ml-6 mt-0 md:mt-0">
+                <p
+                  className="text-gray-200 text-sm md:text-base mb-4 overflow-hidden max-h-24 text-ellipsis"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 4,
+                  }}
+                >
+                  {selectedProject.description}
+                </p>
+
+                {/* Project Link */}
+                <a
+                  href={selectedProject.source_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-gray-100 hover:underline text-sm md:text-base"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <button
+              className="absolute top-2 right-0 transform translate-x-2 text-4xl font-semibold text-gray-600 hover:text-gray-100 bg-transparent hover:bg-transparent border-0 hover:border-0 focus:outline-none transition-transform hover:scale-110"
+              onClick={handleCloseModal}
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

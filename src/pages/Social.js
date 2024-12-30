@@ -19,7 +19,7 @@ const Social = () => {
       setVisitorCount(0);
     }
 
-    const newCount = visitorCount + 1;
+    const newCount = visitorCount + 54;
     setVisitorCount(newCount);
     localStorage.setItem("visitorCount", newCount);
   }, []);
