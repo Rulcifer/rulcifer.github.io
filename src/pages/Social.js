@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Social.css";
 import backgroundImage from "../assets/gtr.png";
 import backgroundMusic from "../assets/music/billie.mp3";
+import takoid from "../assets/icon/takoid.png";
 
 const Social = () => {
   const [visitorCount, setVisitorCount] = useState(0);
@@ -228,7 +229,7 @@ const Social = () => {
                     className="social_link social_link_circle"
                   >
                     <img
-                      src="https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcSLMx4skuc9E1fKM1r7xB8SbOpHqYEolm_DxdZu4-hAwV_W6w_tlIff-n2nxmlllYojhi0lWzcZeEwNUFCyo4qcqkkuz6XuIKBc3jir"
+                      src={takoid}
                       alt="Tako.Id"
                       className="social_icon"
                       style={{
