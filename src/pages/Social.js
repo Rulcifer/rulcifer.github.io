@@ -223,14 +223,14 @@ const Social = () => {
               <div className="container_social">
                 <div className="social-tree">
                   <a
-                    href="https://tako.id/Rulcifer"
+                    href="https://saweria.co/rulch"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social_link social_link_circle"
                   >
                     <img
-                      src={takoid}
-                      alt="Tako.Id"
+                      src="https://saweria.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcapy_happy.603c7293.svg&w=384&q=75"
+                      alt="Saweria"
                       className="social_icon"
                       style={{
                         width: "105%",
