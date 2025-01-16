@@ -96,6 +96,30 @@ const Projects = () => {
         "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
     },
 
+    //AGCI - MANAJEMEN CLASS
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=1C46zT-Ag9nt8uTfAbe55oT0hpHxi-xMq&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1H8wsr5dyFAof4d0gBkchnf_CreSH2Qb1&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1TB_-uKanltM4U-nGtC-Rc8sJnzSTbA5V&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1EpLFZmArAN0wKvQTHCTJOqi8DdHg8zq1&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1yd84q4qv632BjsnuzP8Z41WRDDEaI2xp&sz=w1000-h1000",
+      ],
+      project_name: "AGCI Management Class",
+      description:
+        "As a full-stack developer, I have designed and built the BisnisKita Blog website. This platform serves as a blog for the latest articles and news in the business world. Visitors can read articles without logging in, while registered users can access and comment on posts. Selected users can act as authors, allowing them to write and submit articles for publication. System admins are responsible for validating submitted content and selecting eligible authors. With these features, the website aims to be a reliable and interactive source of business information, offering a platform for authors to share their insights.",
+      tech_stack: [
+        "Laravel",
+        "MySQL",
+        "Postman",
+        "Bootstrap",
+        "Figma",
+        "Laragon",
+      ],
+      source_link:
+        "https://drive.google.com/thumbnail?id=1C46zT-Ag9nt8uTfAbe55oT0hpHxi-xMq&sz=w1000-h1000",
+    },
+
     //LIBRARY KOMIKU
     {
       image_url: [
