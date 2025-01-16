@@ -91,6 +91,7 @@ const Projects = () => {
         "Figma",
         "Canva",
         "Laragon",
+        "cPanel",
       ],
       source_link:
         "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
@@ -107,7 +108,7 @@ const Projects = () => {
       ],
       project_name: "AGCI Management Class",
       description:
-        "As a full-stack developer, I have designed and built the BisnisKita Blog website. This platform serves as a blog for the latest articles and news in the business world. Visitors can read articles without logging in, while registered users can access and comment on posts. Selected users can act as authors, allowing them to write and submit articles for publication. System admins are responsible for validating submitted content and selecting eligible authors. With these features, the website aims to be a reliable and interactive source of business information, offering a platform for authors to share their insights.",
+        "I have designed and developed AGCI, a class management platform that facilitates effective class organization and participation. The application features a Laravel-based intake system for registration and project management, along with a frontend module for managing master data such as users, classes, companies, and class categories. The database structure was designed based on business and technical requirements to support key features, with workflows aligned with the backend team to ensure seamless integration. The user interface was developed following UI/UX designs, with adjustments and revisions based on feedback. Deployment is automated to the server using cPanel and GitHub main branch, eliminating the need for manual uploads. With these features, AGCI serves as a comprehensive solution that supports efficient class management and provides an optimal user experience.",
       tech_stack: [
         "Laravel",
         "MySQL",
@@ -115,6 +116,7 @@ const Projects = () => {
         "Bootstrap",
         "Figma",
         "Laragon",
+        "cPanel",
       ],
       source_link:
         "https://drive.google.com/thumbnail?id=1C46zT-Ag9nt8uTfAbe55oT0hpHxi-xMq&sz=w1000-h1000",
@@ -138,7 +140,7 @@ const Projects = () => {
     {
       image_url: [
         "https://drive.google.com/thumbnail?id=1J2rtcTilsd0QUEil5bBN7fLJmYz4Tl1X&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1eqoziQuWid4ZJYr4aZbB6z_d5IhhuKB6&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1Y3ivGbtsQOEQ4PkywbVvjq1jqyzPzrCG&sz=w1000-h1000",
       ],
       project_name: "App Kuliahku",
       description:
@@ -162,6 +164,21 @@ const Projects = () => {
       tech_stack: ["Laravel + Filament", "MySQL", "Laragon"],
       source_link:
         "https://drive.google.com/thumbnail?id=1tnYg9jNkQADBeL6a153W8zB0m7oAmA5T&sz=w1000-h1000",
+    },
+
+    //LARADRY
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=1zWMKSi_1EcY_Yfu_3id76-Fu3CeRDt_0&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1zU670M_JQ5l5Djv91U-tb9Dcce9cEzbD&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1uJ5i9WTE2XVwNO0dAA_geUf4oBUS9KPR&sz=w1000-h1000",
+      ],
+      project_name: "Londrikan (Laundry)",
+      description:
+        "I have designed and developed a web application for a laundry management system with features including tenant management, service booking, customer management, and laundry status tracking. The backend was developed to handle tenant data, orders, laundry status, and financial reports, along with integration with external APIs for online payments. The database structure was created to support tenant management, laundry bookings, transaction history, and customer management. A user-friendly frontend interface allows customers to book services, manage tenants, and track laundry status in real-time. Workflow processes for tenant and laundry booking management were streamlined to ensure efficient system integration. Functional and security testing was conducted to ensure the application operates smoothly and securely. Deployment was carried out on a Virtual Private Server (VPS), including server configuration, database setup, and performance optimization in the production environment.",
+      tech_stack: ["Laravel + Stisla", "MySQL", "Laragon"],
+      source_link:
+        "https://drive.google.com/thumbnail?id=1zWMKSi_1EcY_Yfu_3id76-Fu3CeRDt_0&sz=w1000-h1000",
     },
   ];
 

@@ -29,6 +29,7 @@ import Discordjs from "../assets/discordjs.png";
 import AdobeXD from "../assets/adobe-xd.svg";
 import AdobePSCS6 from "../assets/Adobe_Photoshop_CS6.png";
 import ExpressJs from "../assets/expressjs.png";
+import cPanel from "../assets/cpanel.png";
 
 const About = () => (
   <section className="about" id="about">
@@ -156,6 +157,10 @@ const About = () => (
         <div className="skill">
           <img src={Laragon} alt="" />
           <p>Laragon</p>
+        </div>
+        <div className="skill">
+          <img src={cPanel} alt="" />
+          <p>cPanel</p>
         </div>
       </div>
       <h2 className="skill-title">Design</h2>
