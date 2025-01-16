@@ -20,6 +20,7 @@ import WordPress from "../assets/wordpress.png";
 import Tailwind from "../assets/tailwindcss.svg";
 import Angular from "../assets/angular.png";
 import Laravel from "../assets/laravel.svg";
+import Filament from "../assets/filament.png";
 import Java from "../assets/java.png";
 import Nodejs from "../assets/nodejs.svg";
 import MySQL from "../assets/mysql.png";
@@ -92,6 +93,10 @@ const About = () => (
         <div className="skill">
           <img src={Laravel} alt="" />
           <p>Laravel</p>
+        </div>
+        <div className="skill">
+          <img src={Filament} alt="" />
+          <p>Filament</p>
         </div>
         <div className="skill">
           <img src={Nodejs} alt="" />
