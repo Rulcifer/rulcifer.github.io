@@ -176,7 +176,7 @@ const Projects = () => {
       project_name: "Londrikan (Laundry)",
       description:
         "I have designed and developed a web application for a laundry management system with features including tenant management, service booking, customer management, and laundry status tracking. The backend was developed to handle tenant data, orders, laundry status, and financial reports, along with integration with external APIs for online payments. The database structure was created to support tenant management, laundry bookings, transaction history, and customer management. A user-friendly frontend interface allows customers to book services, manage tenants, and track laundry status in real-time. Workflow processes for tenant and laundry booking management were streamlined to ensure efficient system integration. Functional and security testing was conducted to ensure the application operates smoothly and securely. Deployment was carried out on a Virtual Private Server (VPS), including server configuration, database setup, and performance optimization in the production environment.",
-      tech_stack: ["Laravel + Stisla", "MySQL", "Laragon"],
+      tech_stack: ["Laravel + Stisla", "MySQL", "Laragon", "Ubuntu"],
       source_link:
         "https://drive.google.com/thumbnail?id=1zWMKSi_1EcY_Yfu_3id76-Fu3CeRDt_0&sz=w1000-h1000",
     },

@@ -30,6 +30,7 @@ import AdobeXD from "../assets/adobe-xd.svg";
 import AdobePSCS6 from "../assets/Adobe_Photoshop_CS6.png";
 import ExpressJs from "../assets/expressjs.png";
 import cPanel from "../assets/cpanel.png";
+import Ubuntu from "../assets/ubuntu.svg";
 
 const About = () => (
   <section className="about" id="about">
@@ -45,7 +46,7 @@ const About = () => (
       </p>
       <button className="hire-me">
         <a
-          href="https://drive.google.com/file/d/1dnjHaiUL986_ipYBeJqXycvkwsXsXL5l/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1HtQtrPWXvvwKW6fx51Tfw21_fSVecGj4/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
@@ -161,6 +162,10 @@ const About = () => (
         <div className="skill">
           <img src={cPanel} alt="" />
           <p>cPanel</p>
+        </div>
+        <div className="skill">
+          <img src={Ubuntu} alt="" />
+          <p>Ubuntu</p>
         </div>
       </div>
       <h2 className="skill-title">Design</h2>
