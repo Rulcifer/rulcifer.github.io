@@ -31,6 +31,9 @@ import AdobePSCS6 from "../assets/Adobe_Photoshop_CS6.png";
 import ExpressJs from "../assets/expressjs.png";
 import cPanel from "../assets/cpanel.png";
 import Ubuntu from "../assets/ubuntu.svg";
+import Squelize from "../assets/sequelize.png";
+import Prisma from "../assets/prisma.svg";
+import MongoDB from "../assets/MongoDB.png";
 
 const About = () => (
   <section className="about" id="about">
@@ -116,6 +119,10 @@ const About = () => (
           <img src={MySQL} alt="" />
           <p>MySQL</p>
         </div>
+        <div className="skill">
+          <img src={MongoDB} alt="" />
+          <p>MongoDB</p>
+        </div>
       </div>
       <h2 className="skill-title">Mobile</h2>
       <div className="skills">
@@ -126,6 +133,17 @@ const About = () => (
         <div className="skill">
           <img src={Flutter} alt="" />
           <p>Flutter</p>
+        </div>
+      </div>
+      <h2 className="skill-title">Database ORM</h2>
+      <div className="skills">
+        <div className="skill">
+          <img src={Squelize} alt="" />
+          <p>Squelize</p>
+        </div>
+        <div className="skill">
+          <img src={Prisma} alt="" />
+          <p>Prisma</p>
         </div>
       </div>
       <h2 className="skill-title">Tools</h2>
