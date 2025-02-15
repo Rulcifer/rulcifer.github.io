@@ -222,7 +222,7 @@ const Social = () => {
               </div>
               <div className="container_social">
                 <div className="social-tree">
-                  <a
+                  {/* <a
                     href="https://saweria.co/rulch"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -240,16 +240,16 @@ const Social = () => {
                       }}
                     />
                     <span className="sr-only">Saweria</span>
-                  </a>
+                  </a> */}
                   <a
-                    href="https://tiptap.gg/@rulcifer"
+                    href="https://sociabuzz.com/rulch/tribe"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social_link social_link_circle"
                   >
                     <img
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAMAAADdXFNzAAAAqFBMVEVHcEz////////////////////////28P3//////v////////+aNuevQdtoWuSSNOpzUOY/ft19R+dWaeFMcuCHPendXsGiLt/Omevw3fjfouLMUcpfYuMvityjP+PtqtvWrO+8Tta4PtOQJ+cjl9rWjN0KodaNCeTeu/CzYuV9N+fozfOcr+xuRuWwnPDEsPS3uvGMwuio1u2tx+6+gOnGX9VfVOOWa+sfPScKAAAAC3RSTlMAr7apwGiA/TIopAFuJuIAAAGqSURBVCiRdZN9d5sgFIfZ1o52V5omaaJIY0DqRJnJlvny/b/ZuKDRnGa/4/Gf57lXuQAh5PkbhXuhX56JyyPQM+Z3yN+QiwuFR1cNptR1XTdN3/fb7dvben04HD4+frpc4In8oOVqtdptNq+vLy/v715Yo4AG/Uqo1NF/hQsQSKLICbu7wh/kcXYjbGdh5HGstV7p+rPgeSsxmbWfBc+Nn0bLrd7Vm+ZGGPsnkJW6rXQ7DKehWQieMyahyjTQ0s95mDtMPHE8ptzxcoDz4hO/kOe+3nNeajD1/JPI0zx3nIX6KIFTPa/CcxU4ft/9ANeLQQWuVKcY8y2iSi8nOXEXxpDr21F7LnIMciPj283yPOWYAoU4y5ZCP3HgtsAODPdqFvqT7y9SKPLC2oQp00pbXYUG+TFwbi20CsACXM+D5+keuVCFAanAlu18okL9fo8ceApGgYwdn1ZRj/wIRYGP47TibjPGVSy4oMDBdO7lWmSjMHGM6IRQHUi/zFHQ5ysXe+HSgcnVLJT04VrvuTBFGLUfVGnc/QJ7HJOOkUmIpPCdkLtXO+ThiZB/79ZaMDKTZ24AAAAASUVORK5CYII="
-                      alt="Tiptap.gg"
+                      src="https://storage.sociabuzz.com/storage/landingpage/img/sociabuzz-logo-icon.png"
+                      alt="Sociabuzz"
                       className="social_icon"
                       style={{
                         width: "105%",
@@ -258,7 +258,7 @@ const Social = () => {
                         maxHeight: "105%",
                       }}
                     />
-                    <span className="sr-only">Tiptap.gg</span>
+                    <span className="sr-only">Sociabuzz</span>
                   </a>
                   <a
                     href="https://www.youtube.com/@rulcifer"
