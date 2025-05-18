@@ -180,6 +180,26 @@ const Projects = () => {
       source_link:
         "https://drive.google.com/thumbnail?id=1zWMKSi_1EcY_Yfu_3id76-Fu3CeRDt_0&sz=w1000-h1000",
     },
+
+    //EX KERAMIK 10X10
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=1ANzshDmksMQJYkqHogWxOVyJ6ZUTDUOR&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1eksUWQhD3mF_rfzrFw_ceooI7CPj4bUB&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1BlYPXbh6zdYw1JSfv3GqowcnMnH__XRJ&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1LkDdHypYTKBFXJ1OT8aZHbKEOETMbzma&sz=w1000-h1000",
+      ],
+      project_name: "Exclusive Ceramic 10x10",
+      description:
+        "I have designed and developed a product knowledge website focused on promoting 10x10 cm exclusive ceramic tiles. This web project was built using WordPress with the Elementor page builder and the Bosa template as its foundation. The site includes a well-structured catalog of 39 ceramic products, categorized by design and color themes. I also created content-rich articles to provide design inspiration for tile installation and improve user engagement. To enhance visibility and traffic, I implemented SEO best practices and integrated the website with Google Search Console (GSC) and Google Analytics for performance tracking and search indexing. My role included content planning, visual customization, product data entry, SEO configuration, and web performance optimization.",
+      tech_stack: [
+        "WordPress + Elementor",
+        "Bosa Template",
+        "Google Search Console",
+        "Google Analytics",
+      ],
+      source_link: "https://exclusivekeramik10x10.com/",
+    },
   ];
 
   const handleOpenModal = (project) => {
