@@ -188,6 +188,7 @@ const Projects = () => {
         "https://drive.google.com/thumbnail?id=1eksUWQhD3mF_rfzrFw_ceooI7CPj4bUB&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1BlYPXbh6zdYw1JSfv3GqowcnMnH__XRJ&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1LkDdHypYTKBFXJ1OT8aZHbKEOETMbzma&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1tnPU4Iv1p4M0dJx2gtaSfj3bIia93NDU&sz=w1000-h1000",
       ],
       project_name: "Exclusive Ceramic 10x10",
       description:
@@ -195,8 +196,38 @@ const Projects = () => {
       tech_stack: [
         "WordPress + Elementor",
         "Bosa Template",
+        "Ubuntu",
+        "DBeaver",
         "Google Search Console",
         "Google Analytics",
+      ],
+      source_link: "https://exclusivekeramik10x10.com/",
+    },
+
+    //TOKO KERAMIK
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=17YqifVN_a1CXRhc1Uhy8z5Af1e8kBfH7&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1sTu_kzTUPdEcBSkQeL7mSKm7nQM5osUW&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1sihnm8hi92FomYGb7z0VG09W67o_775X&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1hE6Ne1BFt8hBsDOh8HMTET_NPR8jVDXV&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1D2amRYOPSVsKCw4yHR9e-_IjR8XM1foy&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1jmI6bjI5Vo6MeWRU9o4FbWnSua2zSe0E&sz=w1000-h1000",
+      ],
+      project_name: "Toko Keramik",
+      description:
+        "I developed the TokoKeramik.com website from scratch, handling both frontend and backend development. On the frontend, I created the main landing page, a product listing page with category and price filters, and a tile installation calculator equipped with interactive canvas-based visual illustrations. On the backend, I designed the database structure and built APIs to support product management and calculation functionalities. I also created several additional landing pages for specific products to support distribution strategies. The website was deployed on a VPS and integrated with Google Analytics and Google Search Console for performance monitoring and SEO optimization.",
+      tech_stack: [
+        "React.jsx (Frontend)",
+        "React.tsx (Admin Panel)",
+        "Tailwind CSS",
+        "NestJS",
+        "MariaDB",
+        "Laragon",
+        "DBeaver",
+        "Ubuntu",
+        "Google Analytics",
+        "Google Search Console",
       ],
       source_link: "https://exclusivekeramik10x10.com/",
     },
