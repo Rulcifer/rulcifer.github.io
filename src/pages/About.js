@@ -127,7 +127,7 @@ const About = () => (
           <p>MySQL</p>
         </div>
         <div className="skill">
-          <img src={MySQL} alt="" />
+          <img src={MariaDB} alt="" />
           <p>MariaDB</p>
         </div>
         <div className="skill">
