@@ -34,6 +34,9 @@ import Ubuntu from "../assets/ubuntu.svg";
 import Squelize from "../assets/sequelize.png";
 import Prisma from "../assets/prisma.svg";
 import MongoDB from "../assets/MongoDB.png";
+import MariaDB from "../assets/mariadb.webp";
+import NestJS from "../assets/nestjs.webp";
+import DBeaver from "../assets/dbeaver.webp";
 
 const About = () => (
   <section className="about" id="about">
@@ -112,12 +115,20 @@ const About = () => (
           <p>Express Js</p>
         </div>
         <div className="skill">
+          <img src={NestJS} alt="" />
+          <p>Nest Js</p>
+        </div>
+        <div className="skill">
           <img src={Discordjs} alt="" />
           <p>Discord Js</p>
         </div>
         <div className="skill">
           <img src={MySQL} alt="" />
           <p>MySQL</p>
+        </div>
+        <div className="skill">
+          <img src={MySQL} alt="" />
+          <p>MariaDB</p>
         </div>
         <div className="skill">
           <img src={MongoDB} alt="" />
@@ -184,6 +195,10 @@ const About = () => (
         <div className="skill">
           <img src={Ubuntu} alt="" />
           <p>Ubuntu</p>
+        </div>
+        <div className="skill">
+          <img src={DBeaver} alt="" />
+          <p>DBeaver</p>
         </div>
       </div>
       <h2 className="skill-title">Design</h2>
