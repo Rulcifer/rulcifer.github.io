@@ -240,7 +240,8 @@ const Projects = () => {
         "https://drive.google.com/thumbnail?id=180LR8KVGgOAGPnC_xWkoeaSh9Ljj3yvG&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1-wa7tPV2wgtlHBX_Vzywq5Z08oDW-d6A&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1oHrkaP7m35HSTHe9QJ_HgWhGmRWDm4Iy&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1oiaq-E5z1iOBV0WLucBvDVTi5_LyJVL1&sz=w1000-h1000",
       ],
       project_name: "Hampers Souvenir",
       description:
