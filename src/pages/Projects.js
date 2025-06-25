@@ -188,6 +188,7 @@ const Projects = () => {
         "https://drive.google.com/thumbnail?id=1eksUWQhD3mF_rfzrFw_ceooI7CPj4bUB&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1BlYPXbh6zdYw1JSfv3GqowcnMnH__XRJ&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1LkDdHypYTKBFXJ1OT8aZHbKEOETMbzma&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1QcQtnGKW1C91DdGLyQsjBJ9xiNy-VZ_V&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1tnPU4Iv1p4M0dJx2gtaSfj3bIia93NDU&sz=w1000-h1000",
       ],
       project_name: "Exclusive Ceramic 10x10",
