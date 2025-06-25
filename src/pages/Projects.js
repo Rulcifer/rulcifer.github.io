@@ -231,6 +231,30 @@ const Projects = () => {
       ],
       source_link: "https://exclusivekeramik10x10.com/",
     },
+
+    //HAMPERS SOUVENIR
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=1q6mszH6vDYQW12TGyEiwqtjw0Vi5shW8&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1n3YZ3GAYV4kYWsds7HlcQI4FFplUQQXX&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=180LR8KVGgOAGPnC_xWkoeaSh9Ljj3yvG&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1-wa7tPV2wgtlHBX_Vzywq5Z08oDW-d6A&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
+      ],
+      project_name: "Hampers Souvenir",
+      description:
+        "I have designed and developed a Hampers Souvenir website to showcase curated gift packages for various occasions. Built using WordPress with the Elementor page builder and the Bosa template, the site features a structured product catalog categorized by themes such as birthdays, weddings, and corporate gifts. I crafted a cohesive visual identity by determining and implementing a custom GSM theme based on the brand’s color palette, ensuring a consistent and elegant user interface. In addition to entering product data and customizing the layout, I created blog content to inspire gift ideas and enhance SEO performance. I also applied SEO best practices and integrated the site with Google Search Console and Google Analytics for effective tracking, indexing, and performance monitoring.",
+      tech_stack: [
+        "WordPress + Elementor",
+        "Bosa Template",
+        "Ubuntu",
+        "DBeaver",
+        "Google Search Console",
+        "Google Analytics",
+      ],
+      source_link: "https://hamperssouvenir.com/",
+    },
   ];
 
   const handleOpenModal = (project) => {
