@@ -213,6 +213,7 @@ const Projects = () => {
         "https://drive.google.com/thumbnail?id=1sihnm8hi92FomYGb7z0VG09W67o_775X&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1hE6Ne1BFt8hBsDOh8HMTET_NPR8jVDXV&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1D2amRYOPSVsKCw4yHR9e-_IjR8XM1foy&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1u9WnJN1q14WZk4yMyq8288SxDISul6BN&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1jmI6bjI5Vo6MeWRU9o4FbWnSua2zSe0E&sz=w1000-h1000",
       ],
       project_name: "Toko Keramik",
