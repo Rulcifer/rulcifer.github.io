@@ -258,6 +258,31 @@ const Projects = () => {
       ],
       source_link: "https://hamperssouvenir.com/",
     },
+
+    //DUNIA TANDON
+    {
+      image_url: [
+        "https://drive.google.com/thumbnail?id=1q6mszH6vDYQW12TGyEiwqtjw0Vi5shW8&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1n3YZ3GAYV4kYWsds7HlcQI4FFplUQQXX&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=180LR8KVGgOAGPnC_xWkoeaSh9Ljj3yvG&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1-wa7tPV2wgtlHBX_Vzywq5Z08oDW-d6A&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1oHrkaP7m35HSTHe9QJ_HgWhGmRWDm4Iy&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1oiaq-E5z1iOBV0WLucBvDVTi5_LyJVL1&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1yNvFL5I1fLfhxvzTtqCYTSn0UYo0uoGH&sz=w1000-h1000",
+      ],
+      project_name: "Dunia Tandon",
+      description:
+        "I developed the Dunia Tandon website using a WordPress template with Elementor as the page builder. The deployment was done on a VPS running Ubuntu, along with SSL configuration for secure access. This website features a catalog of water tank products and includes a product comparison feature to help users evaluate and choose the right option. For SEO optimization, I integrated Google Analytics and Google Search Console to monitor site performance and improve visibility in search results.",
+      tech_stack: [
+        "WordPress + Elementor",
+        "Ubuntu",
+        "DBeaver",
+        "Google Search Console",
+        "Google Analytics",
+      ],
+      source_link: "https://duniatandon.com/",
+    },
   ];
 
   const handleOpenModal = (project) => {
