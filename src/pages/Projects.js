@@ -262,13 +262,12 @@ const Projects = () => {
     //DUNIA TANDON
     {
       image_url: [
-        "https://drive.google.com/thumbnail?id=1q6mszH6vDYQW12TGyEiwqtjw0Vi5shW8&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1n3YZ3GAYV4kYWsds7HlcQI4FFplUQQXX&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=180LR8KVGgOAGPnC_xWkoeaSh9Ljj3yvG&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1-wa7tPV2wgtlHBX_Vzywq5Z08oDW-d6A&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1Llvb47xLEe3XPulGSyVPxAOgJlyk1G-a&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1oHrkaP7m35HSTHe9QJ_HgWhGmRWDm4Iy&sz=w1000-h1000",
-        "https://drive.google.com/thumbnail?id=1oiaq-E5z1iOBV0WLucBvDVTi5_LyJVL1&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1LaRWnFyRbreADlC82yCMwlTiXS-hQfyr&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1kkk2Pwl_fo2AZiri5Em-_WCJXPBNvQFv&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1t2qAwv3JzSLuRUQ-qdaUDJ7J50JV7a8l&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1Og4PfhT8eacMtFTE9T3h2So5S-CaIaV_&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1QHHTD8yN5IBwPadYR-nD4-kh_R6WJ8sx&sz=w1000-h1000",
+        "https://drive.google.com/thumbnail?id=1HBrw8OKurfQ1PGEBoSHEAysBuOlPJF04&sz=w1000-h1000",
         "https://drive.google.com/thumbnail?id=1yNvFL5I1fLfhxvzTtqCYTSn0UYo0uoGH&sz=w1000-h1000",
       ],
       project_name: "Dunia Tandon",
