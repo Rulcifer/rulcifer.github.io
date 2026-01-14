@@ -20,7 +20,7 @@ const projects = [
       </ul>
     ),
     image: "/projects/pondok-keramik/toko-keramik-kalkulator.webp", // Ganti sesuai file di public
-    tags: ["React", "NestJS", "Tailwind", "MariaDB", "VPS"],
+    tags: ["React", "NestJS", "Tailwind", "MariaDB", "VPS", "CI/CD"],
     link: "https://tokokeramik.com/",
     github: "",
   },
@@ -71,8 +71,8 @@ const projects = [
       </ul>
     ),
     image: "/projects/agci/agci-dashboard.png",
-    tags: ["Laravel", "Bootstrap", "MySQL", "CI/CD"],
-    link: "https://drive.google.com/thumbnail?id=1C46zT-Ag9nt8uTfAbe55oT0hpHxi-xMq&sz=w1000-h1000",
+    tags: ["Laravel", "Bootstrap", "MySQL", "CI/CD", "cPanel"],
+    link: "#",
     github: "#",
   },
 
@@ -98,7 +98,7 @@ const projects = [
     ),
     image: "/projects/londrikan/londrikan-dashboard.png",
     tags: ["Laravel", "Stisla", "VPS (Ubuntu)", "Payment Gateway"],
-    link: "https://drive.google.com/thumbnail?id=1zWMKSi_1EcY_Yfu_3id76-Fu3CeRDt_0&sz=w1000-h1000",
+    link: "#",
     github: "#",
   },
 
@@ -117,8 +117,8 @@ const projects = [
       </ul>
     ),
     image: "/projects/agci-bisniskita/agci-bisniskita-artikel.png",
-    tags: ["Angular", "Laravel", "Bootstrap"],
-    link: "https://drive.google.com/thumbnail?id=1EqzHqgdb3ez1un9CLOzfMNege5Tc36sJ&sz=w1000-h1000",
+    tags: ["Angular", "Laravel", "Bootstrap", "MySQL", "cPanel"],
+    link: "#",
     github: "#",
   },
 
@@ -144,7 +144,7 @@ const projects = [
     ),
     image: "/projects/manrisk-spbe/manrisk-spbe-pakta-integritas.png",
     tags: ["Laravel", "NodeJS", "jQuery", "MySQL"],
-    link: "https://drive.google.com/thumbnail?id=1JxPi-vTTIRJL8pc8IpSSEDSYAaDx4rzE&sz=w1000-h1000",
+    link: "#",
     github: "#",
   },
 
@@ -185,7 +185,15 @@ const projects = [
       </ul>
     ),
     image: "/projects/dunia-tandon/dunia-tandon-compare.png",
-    tags: ["Wordpress", "Elementor", "VPS"],
+    tags: [
+      "Wordpress",
+      "Elementor",
+      "VPS",
+      "SEO",
+      "Google Analytics",
+      "GSC",
+      "CI/CD",
+    ],
     link: "https://duniatandon.com/",
     github: "#",
   },
