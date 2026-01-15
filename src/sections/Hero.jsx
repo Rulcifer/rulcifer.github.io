@@ -127,7 +127,6 @@ export const Hero = () => {
                 Software Engineer • React Specialist
               </span>
             </div>
-
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/60">
@@ -150,8 +149,6 @@ export const Hero = () => {
                 scalable, performant web applications that users love.
               </p>
             </div>
-            {/* 👆 BATAS PERUBAHAN JUDUL 👆 */}
-
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <Button
                 size="lg"
@@ -179,7 +176,6 @@ export const Hero = () => {
                 </AnimatedBorderButton>
               </a>
             </div>
-
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
@@ -295,34 +291,39 @@ export const Hero = () => {
           />
 
           {/* Modal Content */}
-          <div className="relative w-full max-w-4xl glass border border-white/10 rounded-3xl p-8 md:p-12 animate-in fade-in zoom-in duration-300">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsSkillsOpen(false)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 text-muted-foreground hover:text-white transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
+          {/* PERUBAHAN UTAMA: max-h-[85vh] dan overflow-y-auto agar bisa di-scroll di HP */}
+          <div className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto glass border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12 animate-in fade-in zoom-in duration-300 shadow-2xl">
+            {/* Close Button - Sticky agar tetap terlihat saat di-scroll (opsional) */}
+            <div className="sticky top-0 right-0 flex justify-end z-10 -mr-2 -mt-2 mb-2 md:absolute md:top-4 md:right-4 md:m-0">
+              <button
+                onClick={() => setIsSkillsOpen(false)}
+                className="p-2 rounded-full bg-black/20 md:bg-transparent hover:bg-white/10 text-muted-foreground hover:text-white transition-colors backdrop-blur-sm md:backdrop-blur-none"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
 
-            <h2 className="text-3xl font-bold mb-2 text-center">
+            {/* Header */}
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center mt-2 md:mt-0">
               Technical <span className="text-primary">Skills</span>
             </h2>
-            <p className="text-muted-foreground text-center mb-10">
+            <p className="text-muted-foreground text-center mb-6 md:mb-10 text-sm md:text-base">
               My coding arsenal and tools
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Mapping Skill Categories */}
+            {/* Grid System */}
+            {/* PERUBAHAN: grid-cols-1 untuk HP, sm:grid-cols-2 untuk tablet, md:grid-cols-3 untuk laptop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {Object.entries(skillCategories).map(([category, skills]) => (
-                <div key={category} className="space-y-4">
-                  <h3 className="text-xl font-semibold text-primary border-b border-white/10 pb-2 inline-block">
+                <div key={category} className="space-y-3 md:space-y-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary border-b border-white/10 pb-2 inline-block">
                     {category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-sm text-muted-foreground hover:text-white hover:border-primary/30 transition-all hover:scale-105 cursor-default"
+                        className="px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs md:text-sm text-muted-foreground hover:text-white hover:border-primary/30 transition-all hover:scale-105 cursor-default"
                       >
                         {skill}
                       </span>
@@ -332,7 +333,8 @@ export const Hero = () => {
               ))}
             </div>
 
-            <div className="mt-10 text-center">
+            {/* Footer Button */}
+            <div className="mt-8 md:mt-10 text-center pb-2">
               <Button size="sm" onClick={() => setIsSkillsOpen(false)}>
                 Close List
               </Button>
