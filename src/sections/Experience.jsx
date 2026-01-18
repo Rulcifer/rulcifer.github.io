@@ -1,5 +1,24 @@
 const experiences = [
-  // 1. Software Engineer - Pondok Keramik (Feb 2025 - Agu 2025)
+  {
+    period: "Oct 2025 – Now",
+    role: "Web Developer (Technical SEO Specialist)",
+    company: "Top4 Digital Marketing",
+    description:
+      "Developed multiple professional company profile websites using WordPress. Focused on technical SEO excellence, including site speed optimization, structural tag hierarchy, and implementing automated page generation through custom PHP shortcodes to improve workflow efficiency.",
+    technologies: [
+      "Wordpress",
+      "Eelementor",
+      "Tailwind CSS",
+      "PHP (Custom Shortcodes)",
+      "Screaming Frog SEO",
+      "CI/CD (Git)",
+      "Kentico (R&D/Training)",
+      "Nginx",
+      "cPanel",
+    ],
+    current: true,
+  },
+
   {
     period: "Feb 2025 – Aug 2025",
     role: "Software Engineer",
@@ -7,18 +26,19 @@ const experiences = [
     description:
       "Led full-cycle development of e-commerce platforms using React & NestJS. Managed server infrastructure (VPS/Ubuntu), implemented CI/CD pipelines, and optimized SEO & performance metrics.",
     technologies: [
+      "Wordpress",
+      "Elementor",
       "React.js",
       "NestJS",
       "Prisma",
-      "Docker",
+      "MariaDB",
       "CI/CD (Git)",
       "Nginx",
       "VPS",
     ],
-    current: true, // Asumsi ini posisi terakhir/terbaru
+    current: true,
   },
 
-  // 2. Fullstack Developer - PT. Alamraya Sebar Barokah (May 2024 - Dec 2024)
   {
     period: "May 2024 – Dec 2024",
     role: "Fullstack Developer",
@@ -29,19 +49,6 @@ const experiences = [
     current: false,
   },
 
-  // 3. Internship Web Developer - Diskominfo Gresik (Sep 2022 - Mar 2023)
-  {
-    period: "Sep 2022 – Mar 2023",
-    role: "Web Developer Intern",
-    company: "Diskominfo Gresik",
-    description:
-      "Transforming manual Excel-based risk management into a web-based system (Laravel). Developed automated risk scoring logic and dashboard reporting features.",
-    technologies: ["Laravel", "MySQL", "jQuery", "Node.js"],
-    current: false,
-  },
-
-  // 4. Fullstack Web Developer - Laundry Permata (Oct 2024 - Dec 2024)
-  // *Note: Periode ini overlap dengan PT Alamraya, saya taruh di urutan ini berdasarkan relevansi project/freelance
   {
     period: "Oct 2024 – Dec 2024",
     role: "Fullstack Developer (Project)",
@@ -52,7 +59,6 @@ const experiences = [
     current: false,
   },
 
-  // 5. Front-End Engineer - 1010-Group (Sep 2023 - Oct 2023)
   {
     period: "Sep 2023 – Oct 2023",
     role: "Front-End Engineer (Project)",
@@ -63,7 +69,6 @@ const experiences = [
     current: false,
   },
 
-  // 6. Web Developer - UD. Pohon Perindang (Mar 2023 - Jun 2023)
   {
     period: "Mar 2023 – Jun 2023",
     role: "Web Developer (Project)",
@@ -71,6 +76,16 @@ const experiences = [
     description:
       "Developed company profile website and ordering system using WordPress. Designed brand identity assets including logo.",
     technologies: ["WordPress", "Elementor", "SEO", "Branding"],
+    current: false,
+  },
+
+  {
+    period: "Sep 2022 – Mar 2023",
+    role: "Web Developer Intern",
+    company: "Diskominfo Gresik",
+    description:
+      "Transforming manual Excel-based risk management into a web-based system (Laravel). Developed automated risk scoring logic and dashboard reporting features.",
+    technologies: ["Laravel", "MySQL", "jQuery", "Node.js"],
     current: false,
   },
 ];

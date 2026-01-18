@@ -35,7 +35,7 @@ export const About = () => {
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
-                About Me
+                Professional Summary
               </span>
             </div>
 
@@ -51,20 +51,14 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 2 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                My journey into software engineering began with a deep curiosity
+                for web architecture, which has evolved into a career focused on
+                delivering high-quality digital products. My approach combines
+                technical excellence with a keen eye for design and user
+                experience.
               </p>
               <p>
-                I specialize in React, Nest.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies,
+                When I'm not coding, I am actively exploring new technologies,
                 contributing to open-source projects, or sharing knowledge with
                 the developer community.
               </p>

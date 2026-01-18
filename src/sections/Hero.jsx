@@ -144,9 +144,10 @@ export const Hero = () => {
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hai, i am Sahrul Rafi Zulfitra — a software engineer
-                specializing in React, Nest.js, and TypeScript. I build
-                scalable, performant web applications that users love.
+                Hi, I am Sahrul Rafi Zulfitra — a software engineer with over 2
+                years of professional experience. Specializing in React,
+                Nest.js, and TypeScript, I build scalable, performant web
+                applications that users love.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
