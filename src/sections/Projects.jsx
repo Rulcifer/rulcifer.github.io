@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ImageSlider } from "@/components/ImageSlider";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -8,7 +9,14 @@ const projects = [
   {
     title: "Boom Real Estate",
     className: "",
-    image: "/projects/pohon-perindang/pohon-perindang-service.png", // using an existing image as placeholder
+    image: [
+      "/projects/re-boom/re-boom.jpg",
+      "/projects/re-boom/re-boom-mapping-reaxml.png",
+      "/projects/re-boom/re-boom-mapping-reaxml-2.png",
+      "/projects/re-boom/re-boom-cron-job.png",
+      "/projects/re-boom/re-boom-theme-custom.png",
+      "/projects/re-boom/re-boom-theme-custom-2.png"
+    ],
     tags: ["WordPress", "PHP", "Tailwind CSS", "Alpine.js", "Lucide Icons", "REAXML", "WP All Import", "Cron Jobs"],
     link: "#",
     github: "#",
@@ -368,42 +376,39 @@ export const Projects = () => {
             >
               {/* Image Container */}
               <div className="relative overflow-hidden aspect-video shrink-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
+                <ImageSlider images={project.image} alt={project.title}>
+                  <div
+                    className="absolute inset-0 
+                  bg-gradient-to-t from-card via-card/50
+                   to-transparent opacity-60 pointer-events-none"
+                  />
 
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
-                  {project.link !== "#" && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
-                      title="Visit Website"
-                    >
-                      <ArrowUpRight className="w-6 h-6" />
-                    </a>
-                  )}
-                  {project.github !== "#" && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
-                      title="View Code"
-                    >
-                      <Github className="w-6 h-6" />
-                    </a>
-                  )}
-                </div>
+                  {/* Overlay Links */}
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px] pointer-events-none">
+                    {project.link !== "#" && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110 pointer-events-auto"
+                        title="Visit Website"
+                      >
+                        <ArrowUpRight className="w-6 h-6" />
+                      </a>
+                    )}
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110 pointer-events-auto"
+                        title="View Code"
+                      >
+                        <Github className="w-6 h-6" />
+                      </a>
+                    )}
+                  </div>
+                </ImageSlider>
               </div>
 
               {/* Content Container */}
