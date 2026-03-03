@@ -1,7 +1,135 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const projects = [
+  // NEW PROJECT 1: Boom Real Estate
+  {
+    title: "Boom Real Estate",
+    className: "",
+    image: "/projects/pohon-perindang/pohon-perindang-service.png", // using an existing image as placeholder
+    tags: ["WordPress", "PHP", "Tailwind CSS", "Alpine.js", "Lucide Icons", "REAXML", "WP All Import", "Cron Jobs"],
+    link: "#",
+    github: "#",
+    description: (
+      <div className="space-y-4">
+        <p className="text-sm text-foreground font-medium">
+          Custom WordPress Real Estate Architecture with Automated REAXML Sync
+        </p>
+        <p className="text-sm text-muted-foreground/90">
+          Built a high-performance real estate platform from scratch using a utility-first styling approach. The primary focus was performance optimization by eliminating dependencies on heavy page builders to achieve maximum PageSpeed scores.
+        </p>
+        <div className="pt-2">
+          <p className="text-sm text-primary font-medium mb-2">Key Contributions:</p>
+          <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground/90">
+            <li>
+              <span className="text-foreground font-medium">Custom Theme Slicing:</span> Transformed the design from Tailwind CSS into a modular and reusable PHP WordPress structure.
+            </li>
+            <li>
+              <span className="text-foreground font-medium">Automated Data Pipeline:</span> Integrated LockedOn (REAXML) data feed using WP All Import and Cron Jobs to automatically sync thousands of property records.
+            </li>
+            <li>
+              <span className="text-foreground font-medium">Lightweight Stack:</span> Implemented Alpine.js for UI interactions and Lucide Icons for crisp yet lightweight visual assets.
+            </li>
+          </ul>
+        </div>
+      </div>
+    ),
+  },
+
+  // NEW PROJECT 2: Realty One (With Code Block)
+  {
+    title: "Realty One",
+    image: "/projects/londrikan/londrikan-dashboard.png", // using existing image as placeholder
+    tags: ["WordPress", "Advanced PHP Logic", "Hook-based Sync", "Regex Data Mapping", "Server-side File Management"],
+    link: "#",
+    github: "#",
+    description: (
+      <div className="space-y-4">
+        <p className="text-sm text-foreground font-medium">
+          Advanced Data Normalization & Storage Management for Real Estate
+        </p>
+        <p className="text-sm text-muted-foreground/90">
+          Developed advanced features for the Realty One platform focusing on Data Integrity and server efficiency. Handled inconsistent raw data from external feeds through a custom logic layer on the backend.
+        </p>
+
+        <div className="pt-2">
+          <p className="text-sm text-primary font-medium mb-2">Technical Highlights (The "Works Great" Part):</p>
+          <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground/90">
+            <li>
+              <span className="text-foreground font-medium">Dynamic Data Transformation:</span> Utilized PHP Output Buffering and Regex to dynamically convert raw land area units (like "Square Metres") into standardized formats (m², Ha) on the frontend without altering the original database.
+            </li>
+            <li>
+              <span className="text-foreground font-medium">Automated Feature Triggers:</span> Built conditional rendering logic for the Floor Plan feature based on data availability in the XML feed.
+            </li>
+            <li>
+              <span className="text-foreground font-medium">Automated Storage Cleanup:</span> Implemented auto-cleanup scripts to delete property asset folders when data is deleted or set to private, ensuring optimal server storage efficiency.
+            </li>
+          </ul>
+        </div>
+
+        <div className="pt-4">
+          <p className="text-sm text-primary font-medium mb-3">The Logic (Backend Engineering):</p>
+          <div className="rounded-lg overflow-hidden border border-white/10 text-xs">
+            <SyntaxHighlighter
+              language="php"
+              style={vscDarkPlus}
+              customStyle={{ margin: 0, padding: '1.5rem', background: 'rgba(0,0,0,0.5)', borderRadius: '0.5rem' }}
+            >
+              {`/**
+ * 1. GLOBAL MAPPING FUNCTION (Data Normalization)
+ */
+function apply_custom_ere_property_size_formatting( $size ) {
+    if ( empty( $size ) ) return '';
+    $unit_mapping = [
+        'square meter[s]?' => 'm²',
+        'm2'               => 'm²',
+        'hectare[s]?'      => 'Ha',
+        'acre[s]?'         => 'Ac',
+    ];
+    foreach ( $unit_mapping as $pattern => $replacement ) {
+        $size = preg_replace("/\\\\b$pattern\\\\b/i", $replacement, $size);
+    }
+    return trim( $size );
+}
+
+/**
+ * 2. AUTOMATIC TRIGGER FOR FLOOR PLAN FEATURES
+ */
+add_action('pmxi_saved_post', 'realty_one_sync_floor_plan_full', 10, 3);
+function realty_one_sync_floor_plan_full($post_id, $xml_node, $is_update) {
+    if (isset($xml_node->objects->floorplan) && !empty((string)$xml_node->objects->floorplan['url'])) {
+        update_post_meta($post_id, 'real_estate_floors_enable', '1');
+    }
+}
+
+/**
+ * 3. AUTOMATED STORAGE CLEANUP ON DELETE
+ */
+add_action('before_delete_post', 'delete_property_upload_folder');
+function delete_property_upload_folder($post_id) {
+    if (get_post_type($post_id) !== 'property') return;
+    $post = get_post($post_id);
+    $upload_dir = wp_upload_dir();
+    $dir = trailingslashit($upload_dir['basedir']) . 'properties/' . $post->post_name;
+    if (file_exists($dir)) {
+        // Recursive directory deletion logic...
+    }
+}`}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-white/5">
+          <p className="text-sm text-primary/80 font-serif italic">
+            "Not only 'looks good', but also 'works great'."
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
   // 1. TOKO KERAMIK (Project Paling Kompleks & Fullstack Modern)
   {
     title: "TokoKeramik.com",
@@ -230,12 +358,12 @@ export const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Projects Grid Container (Masonry) */}
+        <div className="columns-1 md:columns-2 gap-8 space-y-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in flex flex-col h-full"
+              className={`group glass rounded-2xl overflow-hidden animate-fade-in break-inside-avoid h-max inline-block w-full ${project.className || ''}`}
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image Container */}
