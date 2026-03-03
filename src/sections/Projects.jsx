@@ -17,7 +17,7 @@ const projects = [
       "/projects/re-boom/re-boom-theme-custom.png",
       "/projects/re-boom/re-boom-theme-custom-2.png"
     ],
-    tags: ["WordPress", "PHP", "Tailwind CSS", "Alpine.js", "Lucide Icons", "REAXML", "WP All Import", "Cron Jobs"],
+    tags: ["WordPress", "PHP", "Tailwind CSS", "Alpine.js", "Lucide Icons", "REAXML", "FeedSync", "WP All Import", "Cron Jobs", "Hostinger"],
     link: "#",
     github: "#",
     description: (
@@ -35,7 +35,7 @@ const projects = [
               <span className="text-foreground font-medium">Custom Theme Slicing:</span> Transformed the design from Tailwind CSS into a modular and reusable PHP WordPress structure.
             </li>
             <li>
-              <span className="text-foreground font-medium">Automated Data Pipeline:</span> Integrated LockedOn (REAXML) data feed using WP All Import and Cron Jobs to automatically sync thousands of property records.
+              <span className="text-foreground font-medium">Third-Party Data Integration:</span> Engineered an automated pipeline to pull property data (XML) from LockedOn, process it through FeedSync, and seamlessly synchronize thousands of property records to WordPress using WP All Import and Cron Jobs.
             </li>
             <li>
               <span className="text-foreground font-medium">Lightweight Stack:</span> Implemented Alpine.js for UI interactions and Lucide Icons for crisp yet lightweight visual assets.
@@ -49,7 +49,13 @@ const projects = [
   // NEW PROJECT 2: Realty One (With Code Block)
   {
     title: "Realty One",
-    image: "/projects/londrikan/londrikan-dashboard.png", // using existing image as placeholder
+    image: [
+      "/projects/re-realtyone/realtyone-list.png",
+      "/projects/re-realtyone/realtyone-detail.png",
+      "/projects/re-realtyone/realtyone-properties.png",
+      "/projects/re-realtyone/realtyone-fieldfloor-visible.png",
+      "/projects/re-realtyone/realtyone-fieldfloor-image.png",
+    ],
     tags: ["WordPress", "Advanced PHP Logic", "Hook-based Sync", "Regex Data Mapping", "Server-side File Management"],
     link: "#",
     github: "#",
