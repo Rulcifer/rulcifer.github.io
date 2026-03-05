@@ -144,7 +144,7 @@ export const Hero = () => {
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I am Sahrul Rafi Zulfitra — a software engineer with over 2
+                Hi, I am Sahrul Rafi Zulfitra — a software engineer with over 3
                 years of professional experience. Specializing in React,
                 Nest.js, and TypeScript, I build scalable, performant web
                 applications that users love.
@@ -226,7 +226,7 @@ export const Hero = () => {
                   </div>
                 </div>
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-2xl font-bold text-primary">3+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
                   </div>

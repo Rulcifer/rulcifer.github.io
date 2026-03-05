@@ -7,12 +7,12 @@
   --color-card: #141a1f;
 
   /* Diganti menjadi Biru #0096FF */
-  --color-primary: #0096FF; 
+  --color-primary: #0096FF;
   --color-primary-foreground: #ffffff;
 
   --color-secondary: #1f2830;
   /* Diganti agar seragam dengan warna primary */
-  --color-secondary-foreground: #0096FF; 
+  --color-secondary-foreground: #0096FF;
 
   --color-muted: #252e37;
   --color-muted-foreground: #7a8491;
@@ -23,6 +23,7 @@
 
   --color-highlight: #f5a623;
   --color-surface: #1a2329;
+  --color-accent-pink: #EA0B95;
 }
 
 @layer base {
@@ -37,7 +38,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", sans-serif;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   }
 
   .font-serif {
@@ -59,13 +60,11 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 30px
-      color-mix(in srgb, var(--color-primary) 50%, transparent);
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
 
   .glow-border {
-    box-shadow: 0 0 20px
-        color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 }
@@ -77,6 +76,7 @@
       transform: translateY(20px);
       filter: blur(10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -85,26 +85,32 @@
   }
 
   @keyframes slow-drift {
+
     0%,
     100% {
       transform: translate(0, 0);
     }
+
     25% {
       transform: translate(20px, -30px);
     }
+
     50% {
       transform: translate(-15px, -20px);
     }
+
     75% {
       transform: translate(30px, 10px);
     }
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -114,6 +120,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
@@ -163,6 +170,7 @@
     0% {
       stroke-dashoffset: 400;
     }
+
     100% {
       stroke-dashoffset: -550;
     }
@@ -179,8 +187,29 @@
   }
 
   .timeline-glow {
-    box-shadow: 0 0 40px
-        color-mix(in srgb, var(--color-primary) 35%, transparent),
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  /* Gallery card hover */
+  .gallery-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--color-primary) 12%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  /* Line clamp utility */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
