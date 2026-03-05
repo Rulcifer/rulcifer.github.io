@@ -53,6 +53,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
                                     title="Visit Website"
+                                    aria-label={`Visit ${project.title} website`}
                                 >
                                     <ArrowUpRight className="w-6 h-6" />
                                 </a>
@@ -64,6 +65,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
                                     title="View Code"
+                                    aria-label={`View ${project.title} source code on GitHub`}
                                 >
                                     <Github className="w-6 h-6" />
                                 </a>
@@ -82,6 +84,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                aria-label={`Visit ${project.title} website`}
                             >
                                 <ArrowUpRight className="w-5 h-5" />
                             </a>

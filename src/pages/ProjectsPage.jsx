@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowLeft, Github, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { projects } from "@/data/projects.jsx";
 import { ImageSlider } from "@/components/ImageSlider";
+import { SEO } from "@/components/SEO";
 
 const CATEGORIES = ["All", "Web", "Mobile", "Systems"];
 const ITEMS_PER_PAGE = 15;
@@ -47,6 +48,10 @@ export const ProjectsPage = () => {
 
     return (
         <>
+            <SEO
+                title="Project Archive | Sahrul Rafi"
+                description="A comprehensive gallery of my professional works, web applications, and technical experiments across Web, Mobile, and Systems domains."
+            />
             <section className="min-h-screen pt-28 pb-20 relative overflow-hidden">
                 {/* Background glows */}
                 <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
