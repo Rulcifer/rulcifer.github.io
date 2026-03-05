@@ -94,6 +94,8 @@ export const Hero = () => {
         <img
           src="/hero-bg.png"
           alt="Hero image"
+          fetchPriority="high"
+          loading="eager"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
@@ -215,6 +217,8 @@ export const Hero = () => {
                 <img
                   src="/profile.jpg"
                   alt="Sahrul Rafi Zulfitra"
+                  fetchPriority="high"
+                  loading="eager"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
