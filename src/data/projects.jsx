@@ -3,6 +3,10 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // ─── Gallery-only short descriptions (plain text) ───
 const galleryDescriptions = {
+    "Gia Studio":
+        "Building a digital identity for a creative studio focusing on sharp visual performance while remaining lightweight.",
+    "POS Petani":
+        "Developing a custom point-of-sale and inventory management system designed specifically for an agricultural retail store in Madiun.",
     "Boom Real Estate":
         "Custom WordPress real estate platform with automated REAXML data sync pipeline via FeedSync & WP All Import. Built for maximum PageSpeed with utility-first CSS.",
     "Realty One":
@@ -27,6 +31,94 @@ const galleryDescriptions = {
 
 // ─── Full project data ───
 export const projects = [
+    {
+        title: "Gia Studio",
+        category: "Web",
+        image: [
+            "/projects/giastudio/giastudio-home.webp",
+            "/projects/giastudio/giastudio-portfolio.webp",
+            "/projects/giastudio/giastudio-booking.webp",
+            "/projects/giastudio/giastudio-translate-chinese.webp",
+            "/projects/giastudio/giastudio-mobile.webp",
+        ],
+        tags: ["WordPress", "PHP", "Tailwind CSS", "Alpine.js", "Lucide Icons"],
+        link: "http://giastudio.co/",
+        github: "#",
+        galleryDescription: galleryDescriptions["Gia Studio"],
+        description: (
+            <div className="space-y-4">
+                <p className="text-sm text-foreground font-medium">
+                    Custom Lightweight WordPress Theme for Creative Studio
+                </p>
+                <p className="text-sm text-muted-foreground/90">
+                    Building a digital identity for a creative studio focusing on sharp visual performance while remaining lightweight. This project involved transitioning from a static design to a fully dynamic WordPress theme.
+                </p>
+                <div className="pt-2">
+                    <p className="text-sm text-primary font-medium mb-2">Key Highlights:</p>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground/90">
+                        <li>
+                            <span className="text-foreground font-medium">Custom Theme Architecture:</span> Slicing an exclusive design using Tailwind CSS to ensure layout flexibility without the bloat of a page builder.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Interactive UI Components:</span> Implemented Alpine.js for seamless interactive elements like portfolio filters and gallery modals.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Asset Optimization:</span> Integrated Lucide Icons and optimized image assets to achieve optimal LCP (Largest Contentful Paint) scores.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Scalability:</span> Developed a modular code structure allowing the client to easily add new service categories or portfolios.
+                        </li>
+                    </ul>
+                </div>
+                <div className="pt-6 mt-6 border-t border-white/5">
+                    <p className="text-sm text-primary/80 font-serif italic">
+                        "Continuously managed and improved through long-term technical partnership to ensure sustained growth and performance."
+                    </p>
+                </div>
+            </div>
+        ),
+    },
+    {
+        title: "POS Petani",
+        category: "Systems",
+        image: [],
+        tags: ["React", "TypeScript", "NestJS", "MySQL", "Tailwind CSS"],
+        link: "#",
+        github: "#",
+        galleryDescription: galleryDescriptions["POS Petani"],
+        description: (
+            <div className="space-y-4">
+                <p className="text-sm text-foreground font-medium">
+                    Specialized Point of Sale & Inventory Management for Pesticide Retail
+                </p>
+                <p className="text-sm text-muted-foreground/90">
+                    Developing a custom point-of-sale and inventory management system designed specifically for an agricultural retail store in Madiun. This system handles the complexity of inventorying thousands of pesticide and fertilizer products.
+                </p>
+                <div className="pt-2">
+                    <p className="text-sm text-primary font-medium mb-2">Key Highlights:</p>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground/90">
+                        <li>
+                            <span className="text-foreground font-medium">Inventory Precision:</span> Built an accurate stock management module, including product batch tracking and low-stock alerts.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Sales & Reporting Logic:</span> Implemented fast transaction calculation algorithms with automated daily, weekly, and monthly sales reporting features.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Multi-Store Foundation:</span> Designed a database architecture capable of supporting future multi-store (kiosk) expansions.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">UX for Speed:</span> Optimized the cashier interface for rapid data entry to reduce customer queue times during peak hours.
+                        </li>
+                    </ul>
+                </div>
+                <div className="pt-6 mt-6 border-t border-white/5">
+                    <p className="text-sm text-primary/80 font-serif italic">
+                        "Continuously managed and improved through long-term technical partnership to ensure sustained growth and performance."
+                    </p>
+                </div>
+            </div>
+        ),
+    },
     {
         title: "Boom Real Estate",
         category: "Web",
