@@ -4,6 +4,7 @@ import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { Contact } from "@/sections/Contact";
 import { SEO } from "@/components/SEO";
+import { SpaceRunner } from "@/components/SpaceRunner";
 
 export const HomePage = () => {
     return (
@@ -17,6 +18,7 @@ export const HomePage = () => {
             <Projects />
             <Experience />
             <Contact />
+            <SpaceRunner />
         </>
     );
 };
