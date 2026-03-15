@@ -152,6 +152,12 @@ export const projects = [
                             <span className="text-foreground font-medium">Third-Party Data Integration:</span> Engineered an automated pipeline to pull property data (XML) from LockedOn, process it through FeedSync, and seamlessly synchronize thousands of property records to WordPress using WP All Import and Cron Jobs.
                         </li>
                         <li>
+                            <span className="text-foreground font-medium">Advanced Filtering & Dynamic Rendering:</span> Implemented complex logic to categorize commercial, residential, and leased properties, seamlessly mapped to dynamic property card components.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Data Integrity & Asset Handling:</span> Developed custom backend functions to resolve inconsistencies and correct broken image ordering directly from the raw LockedOn XML feeds.
+                        </li>
+                        <li>
                             <span className="text-foreground font-medium">Lightweight Stack:</span> Implemented Alpine.js for UI interactions and Lucide Icons for crisp yet lightweight visual assets.
                         </li>
                     </ul>
