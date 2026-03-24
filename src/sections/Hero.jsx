@@ -169,7 +169,7 @@ export const Hero = () => {
                 )}
               </Button>
               <a
-                href="/cv/cv-sahrul-rafi-zulfitra-english.pdf"
+                href="/cv/CV-Sahrul-Rafi-Z-english-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
