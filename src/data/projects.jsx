@@ -81,7 +81,12 @@ export const projects = [
     {
         title: "POS Petani",
         category: "Systems",
-        image: [],
+        image: [
+            "/projects/pos-petani/pos-petani-dashboard.png",
+            "/projects/pos-petani/pos-petani-kasir-transaksi.png",
+            "/projects/pos-petani/pos-petani-profit.png",
+            "/projects/pos-petani/pos-petani-product-list.png",
+        ],
         tags: ["React", "TypeScript", "NestJS", "MySQL", "Tailwind CSS"],
         link: "#",
         github: "#",
