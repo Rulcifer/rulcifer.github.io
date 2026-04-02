@@ -84,6 +84,16 @@
     }
   }
 
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
   @keyframes slow-drift {
 
     0%,
@@ -124,6 +134,10 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
   }
 
   .animate-fade-in {

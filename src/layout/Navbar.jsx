@@ -41,7 +41,7 @@ export const Navbar = () => {
           to="/"
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          Sahrul Rafi Zulfitra<span className="text-primary">_</span>
+          Sahrul Rafi Zulfitra<span className="text-primary animate-blink">_</span>
         </Link>
 
         {/* Desktop Nav */}
