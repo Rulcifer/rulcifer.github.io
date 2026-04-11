@@ -180,7 +180,7 @@ export const projects = [
             "/projects/re-realtyone/realtyone-fieldfloor-visible.png",
             "/projects/re-realtyone/realtyone-fieldfloor-image.png",
         ],
-        tags: ["WordPress", "Advanced PHP", "Hook-based Sync", "Regex", "Server-side File Mgmt"],
+        tags: ["WordPress", "Advanced PHP", "Hook-based Sync", "Regex", "Server-side File Mgmt", "Conditional Logic"],
         link: "#",
         github: "#",
         galleryDescription: galleryDescriptions["Realty One"],
@@ -200,6 +200,9 @@ export const projects = [
                         </li>
                         <li>
                             <span className="text-foreground font-medium">Automated Feature Triggers:</span> Built conditional rendering logic for Floor Plan based on XML feed data.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Conditional Taxonomy Sync:</span> Developed dynamic logic to safely assign "Open House" statuses and toggle "Featured" properties automatically based on XML inspection schedules without overwriting existing data.
                         </li>
                         <li>
                             <span className="text-foreground font-medium">Automated Storage Cleanup:</span> Auto-cleanup scripts to delete property asset folders on data deletion.
@@ -253,6 +256,33 @@ function delete_property_upload_folder($post_id) {
     if (file_exists($dir)) {
         // Recursive directory deletion logic...
     }
+}
+
+/**
+ * 4. CONDITIONAL TAXONOMY & META (Open House & Featured)
+ */
+add_action('pmxi_saved_post', 'realty_one_set_open_house_status', 10, 3);
+function realty_one_set_open_house_status( $post_id, $xml_node, $is_update ) {
+    $import_id = isset($_GET['id']) ? intval($_GET['id']) : (isset($_GET['import_id']) ? intval($_GET['import_id']) : false);
+    if ( $import_id != 5 ) return;
+
+    $inspection_data = trim(isset($xml_node->inspectionTimes->inspection) ? (string) $xml_node->inspectionTimes->inspection : '');
+
+    if ( ! empty( $inspection_data ) ) {
+        wp_set_object_terms( $post_id, 260, 'property-status', true ); // 260 = Open House ID
+    } else {
+        wp_remove_object_terms( $post_id, 260, 'property-status' );
+    }
+}
+
+// Inline functions for WP All Import mapping
+function gabung_status_realty($main_status, $inspection) {
+    $status = array_filter([trim($main_status), !empty(trim($inspection)) ? 'Open House' : '']);
+    return implode(',', $status);
+}
+
+function cek_featured_open_house($inspection) {
+    return !empty(trim($inspection)) ? '1' : '0';
 }`}
                         </SyntaxHighlighter>
                     </div>
