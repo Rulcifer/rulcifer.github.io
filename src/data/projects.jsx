@@ -171,7 +171,7 @@ export const projects = [
         ),
     },
     {
-        title: "Realty One",
+        title: "Realty One Real Estate",
         category: "Web",
         image: [
             "/projects/re-realtyone/realtyone-list.png",
