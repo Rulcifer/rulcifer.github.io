@@ -3,6 +3,8 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // ─── Gallery-only short descriptions (plain text) ───
 const galleryDescriptions = {
+    "Kost Jemursari CRM":
+        "A comprehensive property management CRM for Kost Jemursari, featuring tenant management, automated billing, and integrated WhatsApp notifications.",
     "Gia Studio":
         "Building a digital identity for a creative studio focusing on sharp visual performance while remaining lightweight.",
     "POS Petani":
@@ -31,6 +33,60 @@ const galleryDescriptions = {
 
 // ─── Full project data ───
 export const projects = [
+    {
+        title: "Kost Jemursari CRM",
+        category: "Systems",
+        image: [
+            "/projects/kost-jemursari/dashboard1.png",
+            "/projects/kost-jemursari/dashboard2.png",
+            // "/projects/kost-jemursari/application.png",
+            "/projects/kost-jemursari/occupancy-calendar.png",
+            "/projects/kost-jemursari/tenant-management.png",
+            "/projects/kost-jemursari/whatsapp-integration.png",
+            "/projects/kost-jemursari/invoice-billing-list.png",
+            "/projects/kost-jemursari/invoice-billing-pdf-view.png",
+        ],
+        tags: ["React", "TypeScript", "NestJS", "Prisma", "WhatsApp API", "Docker", "CI/CD", "Google Cloud", "Google Sheets/Drive API"],
+        link: "#",
+        github: "#",
+        galleryDescription: galleryDescriptions["Kost Jemursari CRM"],
+        description: (
+            <div className="space-y-4">
+                <p className="text-sm text-foreground font-medium">
+                    Comprehensive Property Management CRM with WhatsApp Integration
+                </p>
+                <p className="text-sm text-muted-foreground/90">
+                    Developing a robust CRM system for Kost Jemursari to streamline daily operations. This system handles tenant management, room allocations, automated billing, and direct WhatsApp communication from a centralized dashboard.
+                </p>
+                <div className="pt-2">
+                    <p className="text-sm text-primary font-medium mb-2">Key Highlights:</p>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground/90">
+                        <li>
+                            <span className="text-foreground font-medium">Tenant & Room Management:</span> Efficient tracking of room availability, tenant details, applications, and contract agreements.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Interactive Occupancy Calendar:</span> Visual timeline for easy monitoring of room availability, booking schedules, and upcoming lease expirations.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Automated Billing & Invoices:</span> Integrated system for tracking payments, expenses, and generating automated invoices for tenants.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">WhatsApp API Integration:</span> Built-in WhatsApp functionality for sending automated reminders, notifications, and direct messaging to tenants.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Google Cloud Integration:</span> Automated data synchronization and document management utilizing Google Sheets API and Google Drive API via service account keys.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">Full-Stack Architecture:</span> Developed with a modern stack using React/Tailwind for the frontend and NestJS/Prisma for a reliable, scalable backend.
+                        </li>
+                        <li>
+                            <span className="text-foreground font-medium">DevOps & Deployment:</span> Containerized both frontend and backend using Docker, integrated with CI/CD pipelines for streamlined and automated server deployments.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        ),
+    },
     {
         title: "Gia Studio",
         category: "Web",

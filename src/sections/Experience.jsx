@@ -1,15 +1,34 @@
+import { useState } from "react";
+import { X } from "lucide-react";
+
 const experiences = [
   {
     period: "Oct 2025 – Now",
     role: "Web Developer (Technical SEO Specialist)",
     company: "Top4 Digital Marketing",
     description:
-      "Developed multiple professional company profile websites using WordPress. Focused on technical SEO excellence, including site speed optimization, structural tag hierarchy, and implementing automated page generation through custom PHP shortcodes to improve workflow efficiency.",
+      "Developed professional company profile websites using WordPress. Engineered robust tracking solutions, implemented advanced SEO schemas, and built Shopify pages and EDMs.",
+    detailedHighlights: [
+      "Conducted comprehensive foundational SEO audits for onboarding clients to identify technical vulnerabilities, structural issues, and areas for strategic growth.",
+      "Developed multiple professional company profile websites using WordPress, focusing on site speed optimization and structural tag hierarchy.",
+      "Implemented automated page generation through custom PHP shortcodes to improve workflow efficiency.",
+      "Engineered robust tracking solutions using GTM, Google Analytics, Google Search Console, Meta Pixel, and Google Ads tags to optimize data collection and campaign performance.",
+      "Implemented Schema and FAQ Schema markup for advanced SEO enhancements and better search visibility.",
+      "Executed EDM (Electronic Direct Mail) slicing from Figma designs directly into Shopify EDM templates.",
+      "Utilized Shopify for building and customizing landing pages, and providing interactive page previews to clients."
+    ],
     technologies: [
       "Wordpress",
-      "Eelementor",
+      "Elementor",
       "Cornerstone",
       "Avada",
+      "Shopify",
+      "Schema Markup",
+      "Google Tag Manager",
+      "Google Analytics",
+      "Google Search Console",
+      "Meta Pixel",
+      "Google Ads",
       "React TSX",
       "Nest JS",
       "Tailwind CSS",
@@ -17,11 +36,9 @@ const experiences = [
       "PHP (Custom Shortcodes)",
       "Screaming Frog SEO",
       "CI/CD (Git)",
-      "Kentico (R&D/Training)",
+      "Kentico",
       "Nginx",
-      "cPanel",
-      "Hostinger",
-      "Ventraip",
+      "Docker",
     ],
     current: true,
   },
@@ -98,6 +115,8 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const [selectedExp, setSelectedExp] = useState(null);
+
   return (
     <section id="experience" className="py-32 relative overflow-hidden">
       <div
@@ -162,11 +181,17 @@ export const Experience = () => {
                     }`}
                 >
                   <div
-                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
+                    onClick={() => setSelectedExp(exp)}
+                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 group`}
                   >
-                    <span className="text-sm text-primary font-medium">
-                      {exp.period}
-                    </span>
+                    <div className="flex justify-between items-start">
+                      <span className="text-sm text-primary font-medium">
+                        {exp.period}
+                      </span>
+                      <span className="text-xs text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Click for details ↗
+                      </span>
+                    </div>
                     <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
                     <p className="text-muted-foreground">{exp.company}</p>
                     <p className="text-sm text-muted-foreground mt-4">
@@ -192,6 +217,81 @@ export const Experience = () => {
           </div>
         </div>
       </div>
+
+      {/* Experience Modal */}
+      {selectedExp && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div
+            className="fixed inset-0"
+            onClick={() => setSelectedExp(null)}
+          ></div>
+          <div className="relative w-full max-w-2xl bg-surface border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-10 animate-in zoom-in-95 duration-200">
+            {/* Header */}
+            <div className="p-6 border-b border-white/5 flex items-start justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground">
+                  {selectedExp.role}
+                </h3>
+                <p className="text-lg text-primary mt-1">
+                  {selectedExp.company} <span className="text-muted-foreground text-sm ml-2">({selectedExp.period})</span>
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedExp(null)}
+                className="p-2 rounded-full hover:bg-white/5 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 max-h-[60vh] overflow-y-auto custom-scrollbar">
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wider">
+                    Overview
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {selectedExp.description}
+                  </p>
+                </div>
+
+                {selectedExp.detailedHighlights && selectedExp.detailedHighlights.length > 0 && (
+                  <div>
+                    <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
+                      Key Responsibilities & Achievements
+                    </h4>
+                    <ul className="space-y-3">
+                      {selectedExp.detailedHighlights.map((highlight, idx) => (
+                        <li key={idx} className="flex gap-3 text-sm text-muted-foreground">
+                          <span className="text-primary mt-0.5">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
+                    Technologies & Tools
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedExp.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1.5 bg-background border border-white/5 text-xs rounded-lg text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
