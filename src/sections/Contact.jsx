@@ -51,9 +51,9 @@ export const Contact = () => {
     setSubmitStatus({ type: null, message: "" });
     try {
       // Pastikan kamu sudah buat file .env di root project!
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_dqt71vx";
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_gswsr3w";
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "ZKbDDE9Kf-Q6unLCP";
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
