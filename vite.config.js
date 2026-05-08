@@ -12,6 +12,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5175,
+    port: 5100,
+  },
+  preview: {
+    port: 5100,
   },
 });
