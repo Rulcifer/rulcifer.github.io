@@ -33,11 +33,11 @@ jobs:
         run: npm ci
 
       - name: Build with env variables
-        run: npm run build
-        env:
-          VITE_EMAILJS_SERVICE_ID: "service_dqt71vx"
-          VITE_EMAILJS_TEMPLATE_ID: "template_gswsr3w"
-          VITE_EMAILJS_PUBLIC_KEY: "ZKbDDE9Kf-Q6unLCP"
+        run: |
+          echo "VITE_EMAILJS_SERVICE_ID=service_dqt71vx" >> .env
+          echo "VITE_EMAILJS_TEMPLATE_ID=template_gswsr3w" >> .env
+          echo "VITE_EMAILJS_PUBLIC_KEY=ZKbDDE9Kf-Q6unLCP" >> .env
+          npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
