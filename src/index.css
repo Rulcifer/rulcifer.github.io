@@ -67,6 +67,111 @@
     box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
+
+  /* ── Mobile Bottom Tab Bar ── */
+  .mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 8px 6px 12px;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-background) 97%, transparent),
+      color-mix(in srgb, var(--color-surface) 88%, transparent)
+    );
+    backdrop-filter: blur(28px) saturate(1.6);
+    -webkit-backdrop-filter: blur(28px) saturate(1.6);
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+    /* safe-area for notch phones */
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  /* Floating indicator pill behind active tab */
+  .mobile-tab-indicator {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: calc(100% - 16px - env(safe-area-inset-bottom, 0px));
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 12%, transparent),
+      inset 0 1px 0 color-mix(in srgb, #fff 4%, transparent);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+      width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  /* Individual tab item */
+  .mobile-tab-item {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex: 1;
+    padding: 8px 4px 2px;
+    text-decoration: none;
+    color: var(--color-muted-foreground);
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-tab-item.mobile-tab-active {
+    color: var(--color-primary);
+  }
+
+  /* Icon wrapper with spring-lift */
+  .mobile-tab-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 32px;
+    border-radius: 12px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .mobile-tab-icon-active {
+    transform: translateY(-2px) scale(1.12);
+    background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  /* Label with slide-up reveal */
+  .mobile-tab-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    opacity: 0.55;
+    transform: translateY(2px);
+    transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+      color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .mobile-tab-label-show {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--color-primary);
+  }
+
+  /* Add bottom padding to body so content isn't hidden behind the bar */
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 80px;
+    }
+  }
 }
 
 @layer utilities {
