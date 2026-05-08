@@ -2,6 +2,8 @@ import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "@/layout/Navbar";
 import { Footer } from "@/layout/Footer";
+import { CaticornLoader } from "@/components/CaticornLoader";
+import { LoaderPreview } from "@/pages/LoaderPreview";
 
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import("@/pages/HomePage").then(m => ({ default: m.HomePage })));
@@ -12,14 +14,11 @@ function App() {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
-        <Suspense fallback={
-          <div className="min-h-[70vh] flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin" />
-          </div>
-        }>
+        <Suspense fallback={<CaticornLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/preview-loader" element={<LoaderPreview />} />
           </Routes>
         </Suspense>
       </main>
