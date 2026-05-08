@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const experiences = [
   {
@@ -117,6 +118,11 @@ const experiences = [
 export const Experience = () => {
   const [selectedExp, setSelectedExp] = useState(null);
 
+  const headerLabel = useScrollReveal();
+  const headerTitle = useScrollReveal();
+  const headerDesc = useScrollReveal();
+  const timeline = useStaggerReveal(experiences.length, { staggerMs: 180 });
+
   return (
     <section id="experience" className="py-32 relative overflow-hidden">
       <div
@@ -128,15 +134,15 @@ export const Experience = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span
-            className="text-secondary-foreground text-sm
-           font-medium tracking-wider uppercase animate-fade-in"
+            ref={headerLabel.ref}
+            className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase reveal reveal-up ${headerLabel.isVisible ? "revealed" : ""}`}
           >
             Career Journey
           </span>
           <h2
-            className="text-4xl md:text-5xl font-bold
-           mt-4 mb-6 animate-fade-in animation-delay-100
-            text-secondary-foreground"
+            ref={headerTitle.ref}
+            className={`text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground reveal reveal-blur ${headerTitle.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "100ms" }}
           >
             Experience that{" "}
             <span className="font-serif italic font-normal text-white">
@@ -146,8 +152,9 @@ export const Experience = () => {
           </h2>
 
           <p
-            className="text-muted-foreground
-           animate-fade-in animation-delay-200"
+            ref={headerDesc.ref}
+            className={`text-muted-foreground reveal reveal-up ${headerDesc.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "200ms" }}
           >
             A timeline of my professional growth, delivering robust software
             solutions from government agencies to enterprise clients.
@@ -155,7 +162,7 @@ export const Experience = () => {
         </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div ref={timeline.ref} className="relative">
           <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
 
           {/* Experience Items */}
@@ -163,11 +170,13 @@ export const Experience = () => {
             {experiences.map((exp, idx) => (
               <div
                 key={idx}
-                className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
-                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                className={`relative grid md:grid-cols-2 gap-8 reveal ${
+                  idx % 2 === 0 ? "reveal-left" : "reveal-right"
+                } ${timeline.visibleItems[idx] ? "revealed" : ""}`}
+                style={{ transitionDelay: `${(idx + 1) * 80}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10 timeline-dot">
                   {exp.current && (
                     <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
                   )}
@@ -182,13 +191,13 @@ export const Experience = () => {
                 >
                   <div
                     onClick={() => setSelectedExp(exp)}
-                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 group`}
+                    className={`card-tilt glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 group`}
                   >
                     <div className="flex justify-between items-start">
                       <span className="text-sm text-primary font-medium">
                         {exp.period}
                       </span>
-                      <span className="text-xs text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-xs text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0">
                         Click for details ↗
                       </span>
                     </div>
@@ -204,7 +213,7 @@ export const Experience = () => {
                       {exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
-                          className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                          className="tag-hover px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
                         >
                           {tech}
                         </span>
@@ -220,12 +229,12 @@ export const Experience = () => {
 
       {/* Experience Modal */}
       {selectedExp && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="fixed inset-0"
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm modal-backdrop"
             onClick={() => setSelectedExp(null)}
-          ></div>
-          <div className="relative w-full max-w-2xl bg-surface border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-10 animate-in zoom-in-95 duration-200">
+          />
+          <div className="relative w-full max-w-2xl bg-surface border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-10 modal-content">
             {/* Header */}
             <div className="p-6 border-b border-white/5 flex items-start justify-between">
               <div>
@@ -238,7 +247,7 @@ export const Experience = () => {
               </div>
               <button
                 onClick={() => setSelectedExp(null)}
-                className="p-2 rounded-full hover:bg-white/5 text-muted-foreground hover:text-foreground transition-colors"
+                className="p-2 rounded-full hover:bg-white/5 text-muted-foreground hover:text-foreground transition-all duration-300 hover:rotate-90"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -280,7 +289,7 @@ export const Experience = () => {
                     {selectedExp.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1.5 bg-background border border-white/5 text-xs rounded-lg text-muted-foreground"
+                        className="tag-hover px-3 py-1.5 bg-background border border-white/5 text-xs rounded-lg text-muted-foreground"
                       >
                         {tech}
                       </span>

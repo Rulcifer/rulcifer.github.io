@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const contactInfo = [
   {
@@ -36,6 +37,12 @@ export const Contact = () => {
     type: null, // 'success' or 'error'
     message: "",
   });
+
+  const headerLabel = useScrollReveal();
+  const headerTitle = useScrollReveal();
+  const headerDesc = useScrollReveal();
+  const formReveal = useScrollReveal();
+  const infoReveal = useScrollReveal();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,11 +99,18 @@ export const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span
+            ref={headerLabel.ref}
+            className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase reveal reveal-up ${headerLabel.isVisible ? "revealed" : ""}`}
+          >
             Get In Touch
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100">
+          <h2
+            ref={headerTitle.ref}
+            className={`text-4xl md:text-5xl font-bold mt-4 mb-6 reveal reveal-blur ${headerTitle.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-blue-600 via-blue-400 to-blue-300">
               Let's build
             </span>
@@ -107,7 +121,11 @@ export const Contact = () => {
             </span>
           </h2>
 
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+          <p
+            ref={headerDesc.ref}
+            className={`text-muted-foreground reveal reveal-up ${headerDesc.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "200ms" }}
+          >
             Have a project in mind or want to collaborate? I'd love to hear
             about it. Send me a message and let's discuss how we can work
             together.
@@ -116,7 +134,11 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Form Section */}
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+          <div
+            ref={formReveal.ref}
+            className={`glass p-8 rounded-3xl border border-primary/30 reveal reveal-left ${formReveal.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "300ms" }}
+          >
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -134,7 +156,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="input-animated w-full px-4 py-3 bg-surface rounded-xl border border-border outline-none"
                 />
               </div>
 
@@ -154,7 +176,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="input-animated w-full px-4 py-3 bg-surface rounded-xl border border-border outline-none"
                 />
               </div>
 
@@ -174,29 +196,32 @@ export const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="input-animated w-full px-4 py-3 bg-surface rounded-xl border border-border outline-none resize-none"
                 />
               </div>
 
               <Button
-                className="w-full"
+                className="w-full btn-animated"
                 type="submit"
                 size="lg"
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <>Sending...</>
+                  <>
+                    <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
                 ) : (
                   <>
                     Send Message
-                    <Send className="w-5 h-5" />
+                    <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                  className={`flex items-center gap-3 p-4 rounded-xl animate-fade-in ${
                     submitStatus.type === "success"
                       ? "bg-green-500/10 border border-green-500/20 text-green-400"
                       : "bg-red-500/10 border border-red-500/20 text-red-400"
@@ -214,7 +239,11 @@ export const Contact = () => {
           </div>
 
           {/* Contact Info & Availability */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
+          <div
+            ref={infoReveal.ref}
+            className={`space-y-6 reveal reveal-right ${infoReveal.isVisible ? "revealed" : ""}`}
+            style={{ transitionDelay: "400ms" }}
+          >
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
@@ -226,9 +255,9 @@ export const Contact = () => {
                     href={item.href}
                     target={item.label !== "Location" ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="contact-row flex items-center gap-4 p-4 rounded-xl hover:bg-surface group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="contact-icon-box w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
@@ -243,9 +272,12 @@ export const Contact = () => {
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
+            <div className="glass rounded-3xl p-8 border border-primary/30 highlight-card">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+                </span>
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">

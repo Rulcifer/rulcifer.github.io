@@ -44,6 +44,21 @@
   .font-serif {
     font-family: "Playfair Display", serif;
   }
+
+  /* Smooth scroll with reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer components {
@@ -172,6 +187,260 @@
       padding-bottom: 80px;
     }
   }
+
+  /* ── Scroll Reveal System ── */
+  .reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+  }
+
+  /* Fade up (default) */
+  .reveal-up {
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-up.revealed {
+    transform: translateY(0);
+  }
+
+  /* Fade from left */
+  .reveal-left {
+    transform: translateX(-50px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-left.revealed {
+    transform: translateX(0);
+  }
+
+  /* Fade from right */
+  .reveal-right {
+    transform: translateX(50px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-right.revealed {
+    transform: translateX(0);
+  }
+
+  /* Scale pop */
+  .reveal-scale {
+    transform: scale(0.85);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-scale.revealed {
+    transform: scale(1);
+  }
+
+  /* Blur reveal */
+  .reveal-blur {
+    filter: blur(12px);
+    transform: translateY(20px);
+    transition: opacity 0.8s ease,
+      filter 0.8s ease,
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-blur.revealed {
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  /* ── Button Ripple & Hover ── */
+  .btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease;
+  }
+
+  .btn-animated:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  }
+
+  .btn-animated:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-animated::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .btn-animated:active::after {
+    opacity: 1;
+    transition: opacity 0s;
+  }
+
+  /* ── Card 3D Tilt Hover ── */
+  .card-tilt {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+
+  .card-tilt:hover {
+    box-shadow:
+      0 20px 50px -12px color-mix(in srgb, var(--color-primary) 15%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+
+  /* ── Input Focus Animations ── */
+  .input-animated {
+    position: relative;
+    transition: border-color 0.3s ease,
+      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.25s ease;
+  }
+
+  .input-animated:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent),
+      0 4px 20px color-mix(in srgb, var(--color-primary) 10%, transparent);
+    transform: translateY(-1px);
+  }
+
+  /* ── Modal Overlay Animations ── */
+  .modal-backdrop {
+    animation: modal-backdrop-in 0.3s ease both;
+  }
+
+  .modal-content {
+    animation: modal-content-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  /* ── Social Icon Hover ── */
+  .social-icon-hover {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .social-icon-hover:hover {
+    transform: translateY(-4px) scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  /* ── Section Divider Gradient Line ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in srgb, var(--color-primary) 30%, transparent),
+      transparent
+    );
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  /* ── Floating Tag Animation ── */
+  .tag-hover {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      border-color 0.3s ease,
+      color 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .tag-hover:hover {
+    transform: translateY(-2px) scale(1.05);
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    color: var(--color-primary);
+    background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  }
+
+  /* ── Highlight Card Hover Glow ── */
+  .highlight-card {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      box-shadow 0.4s ease,
+      background-color 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--color-primary) 10%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  }
+
+  .highlight-card:hover .highlight-icon {
+    transform: scale(1.15) rotate(-8deg);
+    background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  .highlight-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* ── Contact Info Row Hover ── */
+  .contact-row {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease;
+  }
+
+  .contact-row:hover {
+    transform: translateX(6px);
+  }
+
+  .contact-row:hover .contact-icon-box {
+    transform: scale(1.1);
+    background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  .contact-icon-box {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.3s ease;
+  }
+
+  /* ── Timeline Dot Pulse ── */
+  .timeline-dot {
+    position: relative;
+  }
+
+  .timeline-dot::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    animation: timeline-pulse 2s ease-in-out infinite;
+  }
+
+  /* ── Quote decoration ── */
+  .quote-badge {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease;
+  }
+
+  .quote-badge:hover {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
 }
 
 @layer utilities {
@@ -241,6 +510,58 @@
     }
   }
 
+  @keyframes modal-backdrop-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes modal-content-in {
+    from {
+      opacity: 0;
+      transform: scale(0.92) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes timeline-pulse {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.1;
+      transform: scale(1.8);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .animate-blink {
     animation: blink 1s step-end infinite;
   }
@@ -255,6 +576,16 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
   }
 
   .animation-delay-100 {
@@ -331,4 +662,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Stagger delay utilities */
+  .stagger-1 { transition-delay: 50ms; }
+  .stagger-2 { transition-delay: 100ms; }
+  .stagger-3 { transition-delay: 150ms; }
+  .stagger-4 { transition-delay: 200ms; }
+  .stagger-5 { transition-delay: 250ms; }
+  .stagger-6 { transition-delay: 300ms; }
+  .stagger-7 { transition-delay: 350ms; }
+  .stagger-8 { transition-delay: 400ms; }
 }

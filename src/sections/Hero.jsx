@@ -160,11 +160,11 @@ export const Hero = () => {
               >
                 {isCopied ? (
                   <>
-                    Email Copied! <Check className="w-5 h-5" />
+                    Email Copied! <Check className="w-5 h-5 animate-bounce" />
                   </>
                 ) : (
                   <>
-                    Contact Me <ArrowRight className="w-5 h-5" />
+                    Contact Me <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </>
                 )}
               </Button>
@@ -174,7 +174,7 @@ export const Hero = () => {
                 rel="noopener noreferrer"
               >
                 <AnimatedBorderButton>
-                  <Download className="w-5 h-5" />
+                  <Download className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-0.5" />
                   Download CV
                 </AnimatedBorderButton>
               </a>
@@ -201,7 +201,9 @@ export const Hero = () => {
                 <a
                   key={idx}
                   href={social.href}
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-hover p-2 rounded-full glass text-muted-foreground hover:bg-primary hover:text-white"
                 >
                   {<social.icon className="w-5 h-5" />}
                 </a>
@@ -291,18 +293,18 @@ export const Hero = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop Blur */}
           <div
-            className="absolute inset-0 bg-background/80 backdrop-blur-md"
+            className="absolute inset-0 bg-background/80 backdrop-blur-md modal-backdrop"
             onClick={() => setIsSkillsOpen(false)}
           />
 
           {/* Modal Content */}
           {/* PERUBAHAN UTAMA: max-h-[85vh] dan overflow-y-auto agar bisa di-scroll di HP */}
-          <div className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto glass border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12 animate-in fade-in zoom-in duration-300 shadow-2xl">
+          <div className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto glass border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12 modal-content shadow-2xl">
             {/* Close Button - Sticky agar tetap terlihat saat di-scroll (opsional) */}
             <div className="sticky top-0 right-0 flex justify-end z-10 -mr-2 -mt-2 mb-2 md:absolute md:top-4 md:right-4 md:m-0">
               <button
                 onClick={() => setIsSkillsOpen(false)}
-                className="p-2 rounded-full bg-black/20 md:bg-transparent hover:bg-white/10 text-muted-foreground hover:text-white transition-colors backdrop-blur-sm md:backdrop-blur-none"
+                className="p-2 rounded-full bg-black/20 md:bg-transparent hover:bg-white/10 text-muted-foreground hover:text-white transition-all duration-300 hover:rotate-90 backdrop-blur-sm md:backdrop-blur-none"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -328,7 +330,7 @@ export const Hero = () => {
                     {skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs md:text-sm text-muted-foreground hover:text-white hover:border-primary/30 transition-all hover:scale-105 cursor-default"
+                        className="tag-hover px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs md:text-sm text-muted-foreground hover:text-white hover:border-primary/30 transition-all cursor-default"
                       >
                         {skill}
                       </span>

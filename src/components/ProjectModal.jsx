@@ -24,17 +24,17 @@ export const ProjectModal = ({ project, onClose }) => {
             onClick={onClose}
         >
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm modal-backdrop" />
 
             {/* Modal Content */}
             <div
-                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-strong rounded-2xl animate-fade-in scrollbar-thin"
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-strong rounded-2xl modal-content scrollbar-thin"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 z-10 p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer hover:rotate-90 hover:scale-110"
                 >
                     <X className="w-5 h-5" />
                 </button>
@@ -51,7 +51,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
+                                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"
                                     title="Visit Website"
                                     aria-label={`Visit ${project.title} website`}
                                 >
@@ -63,7 +63,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
+                                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"
                                     title="View Code"
                                     aria-label={`View ${project.title} source code on GitHub`}
                                 >
@@ -83,7 +83,7 @@ export const ProjectModal = ({ project, onClose }) => {
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                className="p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                                 aria-label={`Visit ${project.title} website`}
                             >
                                 <ArrowUpRight className="w-5 h-5" />
@@ -99,7 +99,7 @@ export const ProjectModal = ({ project, onClose }) => {
                         {project.tags.map((tag, tagIdx) => (
                             <span
                                 key={tagIdx}
-                                className="px-3 py-1 rounded-md bg-surface/50 text-xs font-medium border border-white/10 text-muted-foreground hover:border-primary/30 hover:text-primary transition-colors"
+                                className="tag-hover px-3 py-1 rounded-md bg-surface/50 text-xs font-medium border border-white/10 text-muted-foreground"
                             >
                                 {tag}
                             </span>

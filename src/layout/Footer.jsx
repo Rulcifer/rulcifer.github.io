@@ -1,5 +1,6 @@
 import { Github, Linkedin, Instagram, Heart } from "lucide-react";
 import { FaDiscord, FaSteam } from "react-icons/fa";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // ... (Data socialLinks & footerLinks TETAP SAMA seperti sebelumnya) ...
 const socialLinks = [
@@ -34,16 +35,20 @@ const footerLinks = [
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const footerReveal = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <footer className="py-12 border-t border-border bg-background/50 backdrop-blur-sm">
+    <footer
+      ref={footerReveal.ref}
+      className={`py-12 border-t border-border bg-background/50 backdrop-blur-sm reveal reveal-up ${footerReveal.isVisible ? "revealed" : ""}`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* --- 1. BAGIAN KIRI (DIGABUNG: LOGO + GIF) --- */}
           <div className="flex items-center gap-6 md:gap-8 order-1">
             {/* Logo & Copyright */}
             <div className="text-center md:text-left">
-              <a href="#" className="text-2xl font-bold tracking-tight group">
+              <a href="#" className="text-2xl font-bold tracking-tight group inline-block transition-transform duration-300 hover:scale-105">
                 SRZ
                 <span className="text-primary group-hover:animate-pulse">
                   .
@@ -60,7 +65,7 @@ export const Footer = () => {
               <img
                 src="gif-footer/grim-reaper.gif"
                 alt="Decoration"
-                className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110"
               />
             </div>
           </div>
@@ -71,7 +76,7 @@ export const Footer = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 font-medium hover:-translate-y-0.5"
               >
                 {link.label}
               </a>
@@ -87,7 +92,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="p-2.5 rounded-full glass hover:bg-primary hover:text-white text-muted-foreground transition-all duration-300 hover:-translate-y-1"
+                className="social-icon-hover p-2.5 rounded-full glass hover:bg-primary hover:text-white text-muted-foreground"
               >
                 <social.icon className="w-4 h-4" />
               </a>

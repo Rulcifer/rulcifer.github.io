@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { projects } from "@/data/projects.jsx";
 import { ProjectModal } from "@/components/ProjectModal.jsx";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 // Show only first 4 projects on the landing page
 const featuredProjects = projects.slice(0, 4);
@@ -15,6 +16,12 @@ export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const closeModal = useCallback(() => setSelectedProject(null), []);
 
+  const headerLabel = useScrollReveal();
+  const headerTitle = useScrollReveal();
+  const headerDesc = useScrollReveal();
+  const grid = useStaggerReveal(featuredProjects.length, { staggerMs: 150 });
+  const cta = useScrollReveal();
+
   return (
     <>
       <section id="projects" className="py-32 relative overflow-hidden">
@@ -25,11 +32,18 @@ export const Projects = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Header */}
           <div className="text-center mx-auto max-w-3xl mb-16">
-            <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+            <span
+              ref={headerLabel.ref}
+              className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase reveal reveal-up ${headerLabel.isVisible ? "revealed" : ""}`}
+            >
               Featured Work
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100">
+            <h2
+              ref={headerTitle.ref}
+              className={`text-4xl md:text-5xl font-bold mt-4 mb-6 reveal reveal-blur ${headerTitle.isVisible ? "revealed" : ""}`}
+              style={{ transitionDelay: "100ms" }}
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-blue-600 via-blue-400 to-blue-300">
                 Projects that
               </span>
@@ -40,27 +54,33 @@ export const Projects = () => {
               </span>
             </h2>
 
-            <p className="text-muted-foreground animate-fade-in animation-delay-200">
+            <p
+              ref={headerDesc.ref}
+              className={`text-muted-foreground reveal reveal-up ${headerDesc.isVisible ? "revealed" : ""}`}
+              style={{ transitionDelay: "200ms" }}
+            >
               A selection of my recent work, highlighting effective solutions and
               technical expertise.
             </p>
           </div>
 
           {/* Uniform Grid (2x2) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div ref={grid.ref} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featuredProjects.map((project, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedProject(project)}
-                className="group gallery-card glass rounded-2xl overflow-hidden flex flex-col animate-fade-in cursor-pointer"
-                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                className={`group gallery-card glass rounded-2xl overflow-hidden flex flex-col cursor-pointer reveal reveal-scale ${
+                  grid.visibleItems[idx] ? "revealed" : ""
+                }`}
+                style={{ transitionDelay: `${(idx + 1) * 100}ms` }}
               >
                 {/* Thumbnail */}
                 <div className="relative overflow-hidden aspect-video">
                   <img
                     src={getThumb(project.image)}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent opacity-70 pointer-events-none" />
@@ -73,7 +93,7 @@ export const Projects = () => {
 
                 {/* Content */}
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-sm text-muted-foreground/80 leading-relaxed mb-4 flex-grow line-clamp-3">
@@ -85,7 +105,7 @@ export const Projects = () => {
                     {project.tags.slice(0, 5).map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-md bg-surface/60 text-[11px] font-medium border border-white/8 text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors"
+                        className="tag-hover px-2.5 py-1 rounded-md bg-surface/60 text-[11px] font-medium border border-white/8 text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors"
                       >
                         {tag}
                       </span>
@@ -102,7 +122,10 @@ export const Projects = () => {
           </div>
 
           {/* See All CTA */}
-          <div className="text-center mt-16 animate-fade-in animation-delay-500">
+          <div
+            ref={cta.ref}
+            className={`text-center mt-16 reveal reveal-up ${cta.isVisible ? "revealed" : ""}`}
+          >
             <Link to="/projects" className="inline-block">
               <AnimatedBorderButton>
                 See All Projects
