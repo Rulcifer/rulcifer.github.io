@@ -358,6 +358,10 @@ export const SpaceRunner = () => {
     // ── INPUT HANDLERS ─────────────────────────────────────
     useEffect(() => {
         const onKey = (e) => {
+            // Do not trigger if typing in an input or textarea
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+                return;
+            }
             if (e.code === "Space" || e.code === "ArrowUp") {
                 e.preventDefault();
                 jump();
